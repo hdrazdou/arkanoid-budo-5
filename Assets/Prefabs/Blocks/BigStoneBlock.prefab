@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5519688002320665989}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 3
   BlockSprites: {fileID: 11400000, guid: 634cdbe7b776b44ba91a14b667225508, type: 2}
+  _blockPoints: 5
+  _gameScreen: {fileID: 0}
 --- !u!212 &6703122926177218374
 SpriteRenderer:
   m_ObjectHideFlags: 0

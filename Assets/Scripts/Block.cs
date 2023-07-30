@@ -8,9 +8,12 @@ namespace Arkanoid
 
         [SerializeField] private int _hp = 1;
         [SerializeField] private BlockStatesContainer BlockSprites;
+        [SerializeField] private int _blockPoints;
+        [SerializeField] private GameScreen _gameScreen;
 
         private bool _areStatesAvailable;
         private int _blockStateIndex;
+        private static int _totalScore;
 
         #endregion
 
@@ -18,6 +21,8 @@ namespace Arkanoid
 
         private void Start()
         {
+            _totalScore = 0;
+
             DestroyIfZeroHp();
 
             _areStatesAvailable = BlockSprites.BlockStatesSprites.Length > 0;
@@ -27,6 +32,12 @@ namespace Arkanoid
                 _blockStateIndex = 0;
                 SetBlockStates();
             }
+        }
+
+        private void OnDestroy()
+        {
+            _totalScore += _blockPoints;
+            _gameScreen.UpdateScorePoints(_totalScore);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

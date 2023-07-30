@@ -9,6 +9,7 @@ namespace Arkanoid
         [SerializeField] private Platform _platform;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Vector2 _startVelocity;
+        [SerializeField] private float _velocityMultiplier = 10;
         private bool _isStarted;
         private Vector3 _offset;
 
@@ -19,6 +20,7 @@ namespace Arkanoid
         private void Start()
         {
             SetRandomStartVelocity();
+
             _offset = transform.position - _platform.transform.position;
         }
 
@@ -51,7 +53,7 @@ namespace Arkanoid
             float x = Random.Range(1f, 10f);
             float y = Random.Range(1f, 10f);
 
-            _startVelocity = new Vector2(x, y);
+            _startVelocity = new Vector2(x, y).normalized * _velocityMultiplier;
         }
 
         private void StartTheBall()

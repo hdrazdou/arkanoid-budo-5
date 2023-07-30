@@ -49,7 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platform: {fileID: 0}
   _rb: {fileID: 8595805441630505643}
-  _startVelocity: {x: 1, y: 6}
+  _startVelocity: {x: 0, y: 10}
+  _velocityMultiplier: 7
 --- !u!212 &211635483288591758
 SpriteRenderer:
   m_ObjectHideFlags: 0
