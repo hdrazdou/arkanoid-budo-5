@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e4589ec0ed483ca474e88c6e7e898d, type: 3}
+  m_Name: BigStoneBlockStates
+  m_EditorClassIdentifier: 
+  BlockStatesSprites:
+  - {fileID: 21300000, guid: 3e00411d5c70942d1b3b2049d0b2a3b0, type: 3}
+  - {fileID: 21300000, guid: dc31ea92d0ccd4028b5cc95e85ee9762, type: 3}
+  - {fileID: 21300000, guid: e10ba51b6c14b4b5cabd4fe53435505c, type: 3}
