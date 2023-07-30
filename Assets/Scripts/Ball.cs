@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Arkanoid
 {
@@ -10,8 +9,8 @@ namespace Arkanoid
         [SerializeField] private Platform _platform;
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Vector2 _startVelocity;
-        private Vector3 _offset;
         private bool _isStarted;
+        private Vector3 _offset;
 
         #endregion
 
@@ -19,6 +18,7 @@ namespace Arkanoid
 
         private void Start()
         {
+            SetRandomStartVelocity();
             _offset = transform.position - _platform.transform.position;
         }
 
@@ -28,25 +28,36 @@ namespace Arkanoid
             {
                 return;
             }
-            
-            MoveWithPlatform();
 
+            MoveWithPlatform();
             if (Input.GetMouseButtonDown(0))
             {
                 StartTheBall();
             }
         }
 
-        private void StartTheBall()
-        {
-            _isStarted = true;
-            _rb.velocity = _startVelocity;
-        }
+        #endregion
+
+        #region Private methods
 
         private void MoveWithPlatform()
         {
             Vector3 platformPosition = _platform.transform.position;
             transform.position = platformPosition + _offset;
+        }
+
+        private void SetRandomStartVelocity()
+        {
+            float x = Random.Range(1f, 10f);
+            float y = Random.Range(1f, 10f);
+
+            _startVelocity = new Vector2(x, y);
+        }
+
+        private void StartTheBall()
+        {
+            _isStarted = true;
+            _rb.velocity = _startVelocity;
         }
 
         #endregion
