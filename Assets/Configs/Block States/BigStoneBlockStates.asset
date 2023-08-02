@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e4589ec0ed483ca474e88c6e7e898d, type: 3}
   m_Name: BigStoneBlockStates
   m_EditorClassIdentifier: 
-  BlockStatesSprites:
+  _blockStatesSprites:
   - {fileID: 21300000, guid: 3e00411d5c70942d1b3b2049d0b2a3b0, type: 3}
   - {fileID: 21300000, guid: dc31ea92d0ccd4028b5cc95e85ee9762, type: 3}
   - {fileID: 21300000, guid: e10ba51b6c14b4b5cabd4fe53435505c, type: 3}

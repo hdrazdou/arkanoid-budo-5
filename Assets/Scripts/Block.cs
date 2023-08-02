@@ -7,13 +7,12 @@ namespace Arkanoid
         #region Variables
 
         [SerializeField] private int _hp = 1;
-        [SerializeField] private BlockStatesContainer BlockSprites;
-        [SerializeField] private int _blockPoints;
-        [SerializeField] private GameScreen _gameScreen;
+        [SerializeField] private BlockStatesContainer _blockStatesContainer;
+        [SerializeField] private int _score;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         private bool _areStatesAvailable;
         private int _blockStateIndex;
-        private static int _totalScore;
 
         #endregion
 
@@ -21,11 +20,9 @@ namespace Arkanoid
 
         private void Start()
         {
-            _totalScore = 0;
-
             DestroyIfZeroHp();
 
-            _areStatesAvailable = BlockSprites.BlockStatesSprites.Length > 0;
+            _areStatesAvailable = _blockStatesContainer.BlockStatesSprites.Length > 0;
 
             if (_areStatesAvailable)
             {
@@ -36,8 +33,7 @@ namespace Arkanoid
 
         private void OnDestroy()
         {
-            _totalScore += _blockPoints;
-            _gameScreen.UpdateScorePoints(_totalScore);
+            ScoreService.AddScore(_score);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -67,13 +63,12 @@ namespace Arkanoid
 
         private void SetBlockStates()
         {
-            if (_blockStateIndex == BlockSprites.BlockStatesSprites.Length)
+            if (_blockStateIndex == _blockStatesContainer.BlockStatesSprites.Length)
             {
                 return;
             }
 
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = BlockSprites.BlockStatesSprites[_blockStateIndex];
+            _spriteRenderer.sprite = _blockStatesContainer.BlockStatesSprites[_blockStateIndex];
         }
 
         #endregion

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4148782133750851129}
   - component: {fileID: 6353700538823828731}
   - component: {fileID: 7264868209932602898}
-  - component: {fileID: 7333625464383237857}
+  - component: {fileID: 2681243460168994651}
   m_Layer: 0
   m_Name: TriangleWoodBlock
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6353700538823828731
 MonoBehaviour:
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 1
-  BlockSprites: {fileID: 11400000, guid: a5d83c1c5cd4b4f9a9dc58095f766503, type: 2}
-  _blockPoints: 2
-  _gameScreen: {fileID: 0}
+  _blockStatesContainer: {fileID: 11400000, guid: a5d83c1c5cd4b4f9a9dc58095f766503, type: 2}
+  _score: 1
+  _spriteRenderer: {fileID: 7264868209932602898}
 --- !u!212 &7264868209932602898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,8 +102,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7333625464383237857
-BoxCollider2D:
+--- !u!60 &2681243460168994651
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -144,6 +144,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.4848523, y: 0.5272658}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.51817703, y: -0.48613247}
+  m_UseDelaunayMesh: 0

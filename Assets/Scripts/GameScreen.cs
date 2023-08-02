@@ -11,11 +11,25 @@ namespace Arkanoid
 
         #endregion
 
+        #region Unity lifecycle
+
+        private void Start()
+        {
+            ScoreService.OnScoreChanged += UpdateScorePoints;
+        }
+
+        private void OnDisable()
+        {
+            ScoreService.OnScoreChanged -= UpdateScorePoints;
+        }
+
+        #endregion
+
         #region Public methods
 
-        public void UpdateScorePoints(int totalScore)
+        public void UpdateScorePoints(int score)
         {
-            _scoreLabel.text = $"Score: {totalScore}";
+            _scoreLabel.text = $"Score: {score}";
         }
 
         #endregion

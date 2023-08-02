@@ -47,10 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f49c28126f49dea22a4aee682fb115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _platform: {fileID: 0}
+  _platform: {fileID: 2365453547777632143, guid: 9842a2427811a4ec8b33442a62e9ff01, type: 3}
   _rb: {fileID: 8595805441630505643}
-  _startVelocity: {x: 0, y: 10}
-  _velocityMultiplier: 7
+  _speed: 10
+  _xLimitation: {x: 1, y: 2}
+  _yLimitation: {x: 3, y: 4}
 --- !u!212 &211635483288591758
 SpriteRenderer:
   m_ObjectHideFlags: 0

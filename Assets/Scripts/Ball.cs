@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Arkanoid
 {
@@ -6,10 +7,11 @@ namespace Arkanoid
     {
         #region Variables
 
-        [SerializeField] private Platform _platform;
+        [SerializeField] private Transform _platformTransform;
         [SerializeField] private Rigidbody2D _rb;
-        [SerializeField] private Vector2 _startVelocity;
-        [SerializeField] private float _velocityMultiplier = 10;
+        [SerializeField] private float _speed = 10;
+        [SerializeField] private Vector2 _xLimitation;
+        [SerializeField] private Vector2 _yLimitation;
         private bool _isStarted;
         private Vector3 _offset;
 
@@ -19,9 +21,7 @@ namespace Arkanoid
 
         private void Start()
         {
-            SetRandomStartVelocity();
-
-            _offset = transform.position - _platform.transform.position;
+            _offset = transform.position - _platformTransform.position;
         }
 
         private void Update()
@@ -32,6 +32,7 @@ namespace Arkanoid
             }
 
             MoveWithPlatform();
+
             if (Input.GetMouseButtonDown(0))
             {
                 StartTheBall();
@@ -42,24 +43,24 @@ namespace Arkanoid
 
         #region Private methods
 
-        private void MoveWithPlatform()
+        private Vector2 GetRandomStartVelocity()
         {
-            Vector3 platformPosition = _platform.transform.position;
-            transform.position = platformPosition + _offset;
+            float x = Random.Range(_xLimitation.x, _xLimitation.y);
+            float y = Random.Range(_yLimitation.x, _yLimitation.y);
+
+            return new Vector2(x, y).normalized * _speed;
         }
 
-        private void SetRandomStartVelocity()
+        private void MoveWithPlatform()
         {
-            float x = Random.Range(1f, 10f);
-            float y = Random.Range(1f, 10f);
-
-            _startVelocity = new Vector2(x, y).normalized * _velocityMultiplier;
+            Vector3 platformPosition = _platformTransform.position;
+            transform.position = platformPosition + _offset;
         }
 
         private void StartTheBall()
         {
             _isStarted = true;
-            _rb.velocity = _startVelocity;
+            _rb.velocity = GetRandomStartVelocity();
         }
 
         #endregion

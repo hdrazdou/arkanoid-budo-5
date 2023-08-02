@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 3
-  BlockSprites: {fileID: 11400000, guid: 634cdbe7b776b44ba91a14b667225508, type: 2}
-  _blockPoints: 5
-  _gameScreen: {fileID: 0}
+  _blockStatesContainer: {fileID: 11400000, guid: 634cdbe7b776b44ba91a14b667225508, type: 2}
+  _score: 3
+  _spriteRenderer: {fileID: 6703122926177218374}
 --- !u!212 &6703122926177218374
 SpriteRenderer:
   m_ObjectHideFlags: 0

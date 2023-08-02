@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168118003}
-  - component: {fileID: 168118004}
   m_Layer: 0
   m_Name: Blocks
   m_TagString: Untagged
@@ -165,51 +164,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &168118004
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168118002}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!4 &225439789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6773282221231301961, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
@@ -552,10 +506,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6353700538823828731, guid: 0b58251cbe4b04f6293332c28102bdf2, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -734,6 +684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a3a8cae31f47159d1f8c5bf3f49362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1193679706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4630244051082831887, guid: 9842a2427811a4ec8b33442a62e9ff01, type: 3}
+  m_PrefabInstance: {fileID: 2306847475358321929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1384051892
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,10 +793,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6353700538823828731, guid: 0b58251cbe4b04f6293332c28102bdf2, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1469,10 +1420,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodBlock (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 3845032094054428925, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 6773282221231301961, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1574,10 +1521,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2450201177478430552, guid: 401b98a60d1b9437b9dc08386c9d1bbe, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 2451122167369638139, guid: 401b98a60d1b9437b9dc08386c9d1bbe, type: 3}
       propertyPath: m_Name
       value: StoneBlock
@@ -1599,10 +1542,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodBlock (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3845032094054428925, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 6773282221231301961, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1709,10 +1648,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3835421955072509374, guid: 9648f01c7219444488ccee8e2bd1fbe1, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 5519688002320665989, guid: 9648f01c7219444488ccee8e2bd1fbe1, type: 3}
       propertyPath: m_Name
       value: BigStoneBlock
@@ -1774,10 +1709,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7053774743400354542, guid: 94af393a2d5cb498e8afa9ad13b0f2e9, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 9159627576661717165, guid: 94af393a2d5cb498e8afa9ad13b0f2e9, type: 3}
       propertyPath: m_Name
       value: RoundWoodBlock
@@ -1799,10 +1730,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodBlock
       objectReference: {fileID: 0}
-    - target: {fileID: 3845032094054428925, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 6773282221231301961, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1865,9 +1792,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1146394125}
     - target: {fileID: 4643355102838185684, guid: d25d705a4d57a425f87d5d1b03a4a829, type: 3}
-      propertyPath: _startVelocity.x
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: _platformTransform
+      value: 
+      objectReference: {fileID: 1193679706}
     - target: {fileID: 5513050065062291565, guid: d25d705a4d57a425f87d5d1b03a4a829, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1973,10 +1900,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2450201177478430552, guid: 401b98a60d1b9437b9dc08386c9d1bbe, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 2451122167369638139, guid: 401b98a60d1b9437b9dc08386c9d1bbe, type: 3}
       propertyPath: m_Name
       value: StoneBlock (1)
@@ -1998,10 +1921,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodBlock (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3845032094054428925, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
-      propertyPath: _gameScreen
-      value: 
-      objectReference: {fileID: 1843730639}
     - target: {fileID: 6773282221231301961, guid: 6c93597dabe434732bad151cc1afe10d, type: 3}
       propertyPath: m_RootOrder
       value: -1
