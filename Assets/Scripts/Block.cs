@@ -31,11 +31,6 @@ namespace Arkanoid
             }
         }
 
-        private void OnDestroy()
-        {
-            ScoreService.AddScore(_score);
-        }
-
         private void OnCollisionEnter2D(Collision2D other)
         {
             _hp--;
@@ -57,6 +52,8 @@ namespace Arkanoid
         {
             if (_hp <= 0)
             {
+                GameService.Instance.AddScore(_score);
+                
                 Destroy(gameObject);
             }
         }

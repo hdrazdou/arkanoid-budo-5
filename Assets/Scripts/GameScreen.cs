@@ -9,25 +9,29 @@ namespace Arkanoid
 
         [SerializeField] private TMP_Text _scoreLabel;
 
+        private GameService _gameService;
+
         #endregion
 
         #region Unity lifecycle
 
         private void Start()
         {
-            ScoreService.OnScoreChanged += UpdateScorePoints;
+            GameService.Instance.OnScoreChanged += UpdateScore;
+            
+            UpdateScore(GameService.Instance.TotalScore);
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
-            ScoreService.OnScoreChanged -= UpdateScorePoints;
+            GameService.Instance.OnScoreChanged -= UpdateScore;
         }
 
         #endregion
 
         #region Public methods
 
-        public void UpdateScorePoints(int score)
+        public void UpdateScore(int score)
         {
             _scoreLabel.text = $"Score: {score}";
         }
