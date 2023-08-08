@@ -8,7 +8,10 @@ namespace Arkanoid
 
         private void Update()
         {
-            MoveWithMouse();
+            if (Time.timeScale != 0)
+            {
+                MoveWithMouse();
+            }
         }
 
         #endregion

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Arkanoid
 {
@@ -41,6 +40,22 @@ namespace Arkanoid
 
         #endregion
 
+        #region Public methods
+
+        public void MoveWithPlatform()
+        {
+            Vector3 platformPosition = _platformTransform.position;
+            transform.position = platformPosition + _offset;
+        }
+
+        public void ResetBall()
+        {
+            _isStarted = false;
+            MoveWithPlatform();
+        }
+
+        #endregion
+
         #region Private methods
 
         private Vector2 GetRandomStartVelocity()
@@ -51,22 +66,10 @@ namespace Arkanoid
             return new Vector2(x, y).normalized * _speed;
         }
 
-        public void MoveWithPlatform()
-        {
-            Vector3 platformPosition = _platformTransform.position;
-            transform.position = platformPosition + _offset;
-        }
-
         private void StartTheBall()
         {
             _isStarted = true;
             _rb.velocity = GetRandomStartVelocity();
-        }
-
-        public void ResetBall()
-        {
-            _isStarted = false;
-            MoveWithPlatform();
         }
 
         #endregion

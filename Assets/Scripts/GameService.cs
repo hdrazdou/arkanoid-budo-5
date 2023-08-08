@@ -7,10 +7,11 @@ namespace Arkanoid
     {
         #region Events
 
+        public event Action<int> OnGameOver;
+
         public event Action<int> OnHpChanged;
 
         public event Action<int> OnScoreChanged;
-        public event Action<int> OnGameOver;
 
         #endregion
 
