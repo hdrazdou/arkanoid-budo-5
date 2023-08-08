@@ -53,14 +53,14 @@ namespace Arkanoid
             if (_hp <= 0)
             {
                 GameService.Instance.AddScore(_score);
-                
+
                 Destroy(gameObject);
             }
         }
 
         private void SetBlockStates()
         {
-            if (_blockStateIndex == _blockStatesContainer.BlockStatesSprites.Length)
+            if (_blockStateIndex >= _blockStatesContainer.BlockStatesSprites.Length)
             {
                 return;
             }

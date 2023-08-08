@@ -51,7 +51,7 @@ namespace Arkanoid
             return new Vector2(x, y).normalized * _speed;
         }
 
-        private void MoveWithPlatform()
+        public void MoveWithPlatform()
         {
             Vector3 platformPosition = _platformTransform.position;
             transform.position = platformPosition + _offset;
@@ -61,6 +61,12 @@ namespace Arkanoid
         {
             _isStarted = true;
             _rb.velocity = GetRandomStartVelocity();
+        }
+
+        public void ResetBall()
+        {
+            _isStarted = false;
+            MoveWithPlatform();
         }
 
         #endregion

@@ -8,8 +8,7 @@ namespace Arkanoid
         #region Variables
 
         [SerializeField] private TMP_Text _scoreLabel;
-
-        private GameService _gameService;
+        [SerializeField] private TMP_Text _hpLabel;
 
         #endregion
 
@@ -18,13 +17,16 @@ namespace Arkanoid
         private void Start()
         {
             GameService.Instance.OnScoreChanged += UpdateScore;
-            
+            GameService.Instance.OnHpChanged += UpdateHp;
+
             UpdateScore(GameService.Instance.TotalScore);
+            UpdateHp(GameService.Instance.Hp);
         }
 
         private void OnDestroy()
         {
             GameService.Instance.OnScoreChanged -= UpdateScore;
+            GameService.Instance.OnHpChanged -= UpdateHp;
         }
 
         #endregion
@@ -34,6 +36,15 @@ namespace Arkanoid
         public void UpdateScore(int score)
         {
             _scoreLabel.text = $"Score: {score}";
+        }
+
+        #endregion
+
+        #region Private methods
+
+        private void UpdateHp(int hp)
+        {
+            _hpLabel.text = $"Lives: {hp}";
         }
 
         #endregion

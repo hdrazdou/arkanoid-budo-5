@@ -1,25 +1,21 @@
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Arkanoid
 {
-    public class Floor : MonoBehaviour
+    public class Floor : SingletonMonoBehaviour<Floor>
     {
+        #region Events
+
+        public event Action OnFloorHit;
+
+        #endregion
+
         #region Unity lifecycle
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            ReloadScene();
-        }
-
-        #endregion
-
-        #region Private methods
-
-        private void ReloadScene()
-        {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
+            OnFloorHit?.Invoke();
         }
 
         #endregion

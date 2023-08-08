@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.SceneManagement;
 
 namespace Arkanoid
 {
@@ -6,11 +7,16 @@ namespace Arkanoid
     {
         #region Events
 
+        public event Action<int> OnHpChanged;
+
         public event Action<int> OnScoreChanged;
+        public event Action<int> OnGameOver;
 
         #endregion
 
         #region Properties
+
+        public int Hp { get; private set; }
 
         public int TotalScore { get; private set; }
 
@@ -21,11 +27,14 @@ namespace Arkanoid
         private void Start()
         {
             LevelService.Instance.OnAllBlocksDestroyed += OnAllBlocksDestroyed;
+            Floor.Instance.OnFloorHit += OnFloorHit;
+            Hp = 3;
         }
 
         private void OnDestroy()
         {
             LevelService.Instance.OnAllBlocksDestroyed -= OnAllBlocksDestroyed;
+            Floor.Instance.OnFloorHit -= OnFloorHit;
         }
 
         #endregion
@@ -52,9 +61,37 @@ namespace Arkanoid
             LoadNextLevel();
         }
 
-        private void UpdateScore(int score)
+        private void OnFloorHit()
         {
-            TotalScore += score;
+            Hp--;
+            OnHpChanged?.Invoke(Hp);
+            ResetBall();
+
+            if (Hp <= 0)
+            {
+                OnGameOver?.Invoke(TotalScore);
+                // ReloadGame();
+            }
+        }
+
+        private void ReloadGame()
+        {
+            ResetScores();
+            SceneManager.LoadScene(0);
+        }
+
+        private static void ResetBall()
+        {
+            Ball ball = FindObjectOfType<Ball>();
+            ball.ResetBall();
+        }
+
+        private void ResetScores()
+        {
+            // OnHpChanged?.Invoke(3);
+            // OnScoreChanged?.Invoke(0);
+            Hp = 3;
+            TotalScore = 0;
         }
 
         #endregion
