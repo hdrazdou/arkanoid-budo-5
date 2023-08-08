@@ -17,7 +17,7 @@ namespace Arkanoid
 
         #region Properties
 
-        public int Hp { get; private set; }
+        public int Hp { get; private set; } = 3;
 
         public int TotalScore { get; private set; }
 
@@ -29,7 +29,6 @@ namespace Arkanoid
         {
             LevelService.Instance.OnAllBlocksDestroyed += OnAllBlocksDestroyed;
             Floor.Instance.OnFloorHit += OnFloorHit;
-            Hp = 3;
         }
 
         private void OnDestroy()

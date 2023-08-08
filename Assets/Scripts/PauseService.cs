@@ -6,11 +6,18 @@ namespace Arkanoid
     {
         #region Variables
 
+        [SerializeField] private GameObject _pauseImage;
+
         private bool _isPaused;
 
         #endregion
 
         #region Unity lifecycle
+
+        private void Start()
+        {
+            _pauseImage.SetActive(false);
+        }
 
         private void Update()
         {
@@ -28,6 +35,8 @@ namespace Arkanoid
         {
             _isPaused = !_isPaused;
             Time.timeScale = _isPaused ? 0 : 1;
+
+            _pauseImage.SetActive(_isPaused);
         }
 
         #endregion

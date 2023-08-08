@@ -7,6 +7,8 @@ namespace Arkanoid
     {
         #region Variables
 
+        [SerializeField] private GameObject _gameOverImage;
+
         [SerializeField] private TMP_Text _gameOverScoreLabel;
 
         #endregion
@@ -15,11 +17,11 @@ namespace Arkanoid
 
         private void Start()
         {
-            gameObject.SetActive(false);
+            _gameOverImage.SetActive(false);
             GameService.Instance.OnGameOver += ShowGameOver;
         }
 
-        private void Update()
+        private void OnDestroy()
         {
             GameService.Instance.OnGameOver -= ShowGameOver;
         }
@@ -31,7 +33,7 @@ namespace Arkanoid
         private void ShowGameOver(int score)
         {
             _gameOverScoreLabel.text = $"Your Score: {score}";
-            gameObject.SetActive(true);
+            _gameOverImage.SetActive(true);
         }
 
         #endregion
