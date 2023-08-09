@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: InvisibleBlockStates
   m_EditorClassIdentifier: 
   _blockStatesSprites:
-  - {fileID: 0}
   - {fileID: 21300000, guid: ac8b7ed3dcd424966b51536434b0d938, type: 3}

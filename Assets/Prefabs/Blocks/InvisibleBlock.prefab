@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fac614f73724873a43f52ceeaa38548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 3
+  _hp: 1
   _blockStatesContainer: {fileID: 11400000, guid: 80bebf3eb3e1e443fb52b73b68812ee2, type: 2}
   _score: 1
   _spriteRenderer: {fileID: 5907427334373776470}
+  _isInvisible: 1
 --- !u!212 &5907427334373776470
 SpriteRenderer:
   m_ObjectHideFlags: 0
