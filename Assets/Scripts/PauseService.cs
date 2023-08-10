@@ -1,23 +1,23 @@
+using System;
 using UnityEngine;
 
 namespace Arkanoid
 {
     public class PauseService : SingletonMonoBehaviour<PauseService>
     {
-        #region Variables
+        #region Events
 
-        [SerializeField] private GameObject _pauseImage;
+        public event Action<bool> OnPauseStateChanged;
 
-        private bool _isPaused;
+        #endregion
+
+        #region Properties
+
+        public bool IsPaused { get; private set; }
 
         #endregion
 
         #region Unity lifecycle
-
-        private void Start()
-        {
-            _pauseImage.SetActive(false);
-        }
 
         private void Update()
         {
@@ -33,10 +33,9 @@ namespace Arkanoid
 
         private void TogglePause()
         {
-            _isPaused = !_isPaused;
-            Time.timeScale = _isPaused ? 0 : 1;
-
-            _pauseImage.SetActive(_isPaused);
+            IsPaused = !IsPaused;
+            OnPauseStateChanged?.Invoke(IsPaused);
+            Time.timeScale = IsPaused ? 0 : 1;
         }
 
         #endregion

@@ -8,7 +8,7 @@ namespace Arkanoid
 
         private void Update()
         {
-            if (Time.timeScale != 0)
+            if (!PauseService.Instance.IsPaused)
             {
                 MoveWithMouse();
             }

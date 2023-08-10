@@ -31,20 +31,16 @@ namespace Arkanoid
 
         #endregion
 
-        #region Public methods
-
-        public void UpdateScore(int score)
-        {
-            _scoreLabel.text = $"Score: {score}";
-        }
-
-        #endregion
-
         #region Private methods
 
         private void UpdateHp(int hp)
         {
             _hpLabel.text = $"Lives: {hp}";
+        }
+
+        private void UpdateScore(int score)
+        {
+            _scoreLabel.text = $"Score: {score}";
         }
 
         #endregion

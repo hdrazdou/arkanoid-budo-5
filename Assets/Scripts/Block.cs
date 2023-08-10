@@ -6,21 +6,17 @@ namespace Arkanoid
     {
         #region Variables
 
+        [Header("Settings")]
         [SerializeField] private int _hp = 1;
-        [SerializeField] private BlockStatesContainer _blockStatesContainer;
         [SerializeField] private int _score;
-        [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private bool _isInvisible;
+
+        [Header("Components")]
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private BlockStatesContainer _blockStatesContainer;
 
         private bool _areStatesAvailable;
         private int _blockStateIndex;
-
-        private void SetAlpha(float alpha)
-        {
-            Color color = _spriteRenderer.color;
-            color.a = alpha;
-            _spriteRenderer.color = color;
-        }
 
         #endregion
 
@@ -41,24 +37,15 @@ namespace Arkanoid
             }
         }
 
-        private void HideIfInvisible()
-        {
-            if (_isInvisible)
-            {
-                SetAlpha(0);
-            }
-                
-        }
-
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (_isInvisible)
             {
                 _isInvisible = false;
-                SetAlpha(1);
+                _spriteRenderer.SetAlpha(1);
                 return;
             }
-            
+
             _hp--;
 
             DestroyIfZeroHp();
@@ -81,6 +68,14 @@ namespace Arkanoid
                 GameService.Instance.AddScore(_score);
 
                 Destroy(gameObject);
+            }
+        }
+
+        private void HideIfInvisible()
+        {
+            if (_isInvisible)
+            {
+                _spriteRenderer.SetAlpha(0);
             }
         }
 

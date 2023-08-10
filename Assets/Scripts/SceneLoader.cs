@@ -18,6 +18,11 @@ namespace Arkanoid
             SceneManager.LoadScene(nextSceneIndex);
         }
 
+        public void LoadZeroScene()
+        {
+            SceneManager.LoadScene(0);
+        }
+
         #endregion
     }
 }

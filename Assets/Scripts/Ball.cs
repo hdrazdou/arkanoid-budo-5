@@ -42,12 +42,6 @@ namespace Arkanoid
 
         #region Public methods
 
-        public void MoveWithPlatform()
-        {
-            Vector3 platformPosition = _platformTransform.position;
-            transform.position = platformPosition + _offset;
-        }
-
         public void ResetBall()
         {
             _isStarted = false;
@@ -64,6 +58,12 @@ namespace Arkanoid
             float y = Random.Range(_yLimitation.x, _yLimitation.y);
 
             return new Vector2(x, y).normalized * _speed;
+        }
+
+        private void MoveWithPlatform()
+        {
+            Vector3 platformPosition = _platformTransform.position;
+            transform.position = platformPosition + _offset;
         }
 
         private void StartTheBall()
