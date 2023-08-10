@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Arkanoid
 {
@@ -6,8 +7,8 @@ namespace Arkanoid
     {
         #region Variables
 
-        [SerializeField] private GameObject _pauseImage;
-        [SerializeField] private GameObject _pauseLabel;
+        [SerializeField] private GameObject _pauseScreenUi;
+        [SerializeField] private Button _continueButton;
 
         #endregion
 
@@ -15,8 +16,9 @@ namespace Arkanoid
 
         private void Start()
         {
+            _continueButton.onClick.AddListener(OnContinueButtonClicked);
             PauseService.Instance.OnPauseStateChanged += ChangePauseState;
-            _pauseImage.SetActive(false);
+            _pauseScreenUi.SetActive(false);
         }
 
         private void OnDestroy()
@@ -30,8 +32,12 @@ namespace Arkanoid
 
         private void ChangePauseState(bool isPaused)
         {
-            _pauseImage.SetActive(isPaused);
-            _pauseLabel.SetActive(isPaused);
+            _pauseScreenUi.SetActive(isPaused);
+        }
+
+        private void OnContinueButtonClicked()
+        {
+            PauseService.Instance.TogglePause();
         }
 
         #endregion

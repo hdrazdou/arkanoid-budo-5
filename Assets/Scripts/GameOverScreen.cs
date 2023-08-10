@@ -24,11 +24,6 @@ namespace Arkanoid
             _restartButton.onClick.AddListener(OnRestartButtonClicked);
         }
 
-        private void OnRestartButtonClicked()
-        {
-            GameService.Instance.ReloadGame();
-        }
-
         private void OnDestroy()
         {
             GameService.Instance.OnGameOver -= ShowGameOver;
@@ -37,6 +32,11 @@ namespace Arkanoid
         #endregion
 
         #region Private methods
+
+        private void OnRestartButtonClicked()
+        {
+            GameService.Instance.ReloadGame();
+        }
 
         private void ShowGameOver(int score)
         {

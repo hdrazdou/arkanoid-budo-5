@@ -29,9 +29,9 @@ namespace Arkanoid
 
         #endregion
 
-        #region Private methods
+        #region Public methods
 
-        private void TogglePause()
+        public void TogglePause()
         {
             IsPaused = !IsPaused;
             OnPauseStateChanged?.Invoke(IsPaused);
