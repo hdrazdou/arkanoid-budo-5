@@ -21,8 +21,19 @@ namespace Arkanoid
         private void Start()
         {
             _offset = transform.position - _platformTransform.position;
+
+            PerformStartActions();
         }
 
+        private void PerformStartActions()
+        {
+            _isStarted = false;
+            
+            if (GameService.Instance.NeedAutoPlay)
+            {
+                StartTheBall();
+            }
+        }
         private void Update()
         {
             if (_isStarted)
@@ -44,8 +55,8 @@ namespace Arkanoid
 
         public void ResetBall()
         {
-            _isStarted = false;
             MoveWithPlatform();
+            PerformStartActions();
         }
 
         #endregion
