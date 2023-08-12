@@ -8,32 +8,44 @@
             &lt;unity:SerializableClass /&gt;
         &lt;/TypePattern.Match&gt;
 
-        &lt;Region Name="Variables" Priority="140"&gt;
-            &lt;Entry Priority="100" DisplayName="Public Const"&gt;
+        &lt;Region Name="Public Nested Types" Priority="150"&gt;
+            &lt;Entry Priority="150" DisplayName="Nested Types"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
+                        &lt;Kind Is="Type" /&gt;
                         &lt;Access Is="Public" /&gt;
-                        &lt;Kind Is="Constant" /&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
-                &lt;Entry.SortBy&gt;
-                    &lt;Name /&gt;
-                &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
+        &lt;/Region&gt;
 
-            &lt;Entry Priority="100" DisplayName="Private Const"&gt;
+        &lt;Region Name="Variables" Priority="150"&gt;
+            &lt;Entry Priority="100" DisplayName="Static Fields"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
-                        &lt;Access Is="Private" /&gt;
-                        &lt;Kind Is="Constant" /&gt;
+                        &lt;Kind Is="Field" /&gt;
+                        &lt;Static/&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
+                    &lt;Access Order="Public Internal Protected ProtectedInternal Private"/&gt;
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
 
-            &lt;Entry Priority="90" DisplayName="Public Fields"&gt;
+            &lt;Entry Priority="100" DisplayName="Const Fields"&gt;
+                &lt;Entry.Match&gt;
+                    &lt;And&gt;
+                        &lt;Kind Is="Constant" /&gt;
+                    &lt;/And&gt;
+                &lt;/Entry.Match&gt;
+                &lt;Entry.SortBy&gt;
+                    &lt;Access Order="Public Internal Protected ProtectedInternal Private"/&gt;
+                    &lt;Name /&gt;
+                &lt;/Entry.SortBy&gt;
+            &lt;/Entry&gt;
+
+            &lt;Entry Priority="100" DisplayName="Public Fields"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
                         &lt;Access Is="Public" /&gt;
@@ -45,7 +57,7 @@
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
 
-            &lt;Entry Priority="80" DisplayName="Unity Fields"&gt;
+            &lt;Entry Priority="100" DisplayName="Unity Fields"&gt;
                 &lt;Entry.Match&gt;
                     &lt;unity:SerializedField /&gt;
                 &lt;/Entry.Match&gt;
@@ -53,41 +65,30 @@
                 &lt;!-- No sorting --&gt;
             &lt;/Entry&gt;
 
-            &lt;Entry Priority="80" DisplayName="Protected Fields"&gt;
+            &lt;Entry Priority="50" DisplayName="Fields"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
-                        &lt;Access Is="Protected" /&gt;
                         &lt;Kind Is="Field" /&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
-                    &lt;Name /&gt;
-                &lt;/Entry.SortBy&gt;
-            &lt;/Entry&gt;
-
-            &lt;Entry Priority="70" DisplayName="Private Fields"&gt;
-                &lt;Entry.Match&gt;
-                    &lt;And&gt;
-                        &lt;Access Is="Private" /&gt;
-                        &lt;Kind Is="Field" /&gt;
-                    &lt;/And&gt;
-                &lt;/Entry.Match&gt;
-                &lt;Entry.SortBy&gt;
+                    &lt;Access Order="Internal Protected ProtectedInternal Private"/&gt;
+                    &lt;Readonly /&gt;
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
         &lt;/Region&gt;
 
         &lt;Region Name="Events" Priority="130"&gt;
-            &lt;Entry Priority="100" DisplayName="Public Events"&gt;
+            &lt;Entry Priority="100" DisplayName="Events"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
-                        &lt;Access Is="Public" /&gt;
                         &lt;Kind Is="Event" /&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
                     &lt;Static /&gt;
+                    &lt;Access Order="Public Internal Protected ProtectedInternal Private"/&gt;
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
@@ -322,32 +323,44 @@
 	<s:String x:Key="/Default/CodeStyle/CSharpFileLayoutPatterns/Pattern/@EntryValue">&lt;Patterns xmlns="urn:schemas-jetbrains-com:member-reordering-patterns"&gt;
     
     &lt;TypePattern DisplayName="Public" RemoveRegions="All"&gt;
-        &lt;Region Name="Variables" Priority="140"&gt;
-            &lt;Entry Priority="100" DisplayName="Public Const"&gt;
+        &lt;Region Name="Public Nested Types" Priority="150"&gt;
+            &lt;Entry Priority="150" DisplayName="Nested Types"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
+                        &lt;Kind Is="Type" /&gt;
                         &lt;Access Is="Public" /&gt;
+                    &lt;/And&gt;
+                &lt;/Entry.Match&gt;
+            &lt;/Entry&gt;
+        &lt;/Region&gt;
+        
+        &lt;Region Name="Variables" Priority="150"&gt;
+            &lt;Entry Priority="100" DisplayName="Static Fields"&gt;
+                &lt;Entry.Match&gt;
+                    &lt;And&gt;
+                        &lt;Kind Is="Field" /&gt;
+                        &lt;Static/&gt;
+                    &lt;/And&gt;
+                &lt;/Entry.Match&gt;
+                &lt;Entry.SortBy&gt;
+                    &lt;Access Order="Public Internal Protected ProtectedInternal Private"/&gt;
+                    &lt;Name /&gt;
+                &lt;/Entry.SortBy&gt;
+            &lt;/Entry&gt;
+
+            &lt;Entry Priority="100" DisplayName="Const Fields"&gt;
+                &lt;Entry.Match&gt;
+                    &lt;And&gt;
                         &lt;Kind Is="Constant" /&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
+                    &lt;Access Order="Public Internal Protected ProtectedInternal Private"/&gt;
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
 
-            &lt;Entry Priority="100" DisplayName="Private Const"&gt;
-                &lt;Entry.Match&gt;
-                    &lt;And&gt;
-                        &lt;Access Is="Private" /&gt;
-                        &lt;Kind Is="Constant" /&gt;
-                    &lt;/And&gt;
-                &lt;/Entry.Match&gt;
-                &lt;Entry.SortBy&gt;
-                    &lt;Name /&gt;
-                &lt;/Entry.SortBy&gt;
-            &lt;/Entry&gt;
-
-            &lt;Entry Priority="90" DisplayName="Public Fields"&gt;
+            &lt;Entry Priority="100" DisplayName="Public Fields"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
                         &lt;Access Is="Public" /&gt;
@@ -358,42 +371,31 @@
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
-
-            &lt;Entry Priority="80" DisplayName="Protected Fields"&gt;
+            
+            &lt;Entry Priority="50" DisplayName="Fields"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
-                        &lt;Access Is="Protected" /&gt;
                         &lt;Kind Is="Field" /&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
-                    &lt;Name /&gt;
-                &lt;/Entry.SortBy&gt;
-            &lt;/Entry&gt;
-
-            &lt;Entry Priority="70" DisplayName="Private Fields"&gt;
-                &lt;Entry.Match&gt;
-                    &lt;And&gt;
-                        &lt;Access Is="Private" /&gt;
-                        &lt;Kind Is="Field" /&gt;
-                    &lt;/And&gt;
-                &lt;/Entry.Match&gt;
-                &lt;Entry.SortBy&gt;
+                    &lt;Access Order="Internal Protected ProtectedInternal Private"/&gt;
+                    &lt;Readonly /&gt;
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
         &lt;/Region&gt;
 
         &lt;Region Name="Events" Priority="130"&gt;
-            &lt;Entry Priority="100" DisplayName="Public Events"&gt;
+            &lt;Entry Priority="100" DisplayName="Events"&gt;
                 &lt;Entry.Match&gt;
                     &lt;And&gt;
-                        &lt;Access Is="Public" /&gt;
                         &lt;Kind Is="Event" /&gt;
                     &lt;/And&gt;
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
                     &lt;Static /&gt;
+                    &lt;Access Order="Public Internal Protected ProtectedInternal Private"/&gt;
                     &lt;Name /&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
@@ -424,6 +426,18 @@
                 &lt;/Entry.Match&gt;
                 &lt;Entry.SortBy&gt;
                     &lt;Kind Order="Constructor" /&gt;
+                &lt;/Entry.SortBy&gt;
+            &lt;/Entry&gt;
+
+            &lt;Entry DisplayName="Inject"&gt;
+                &lt;Entry.Match&gt;
+                    &lt;And&gt;
+                        &lt;Kind Is="Method" /&gt;
+                        &lt;HasAttribute Name="Inject"/&gt;
+                    &lt;/And&gt;
+                &lt;/Entry.Match&gt;
+                &lt;Entry.SortBy&gt;
+                    &lt;Name/&gt;
                 &lt;/Entry.SortBy&gt;
             &lt;/Entry&gt;
         &lt;/Region&gt;
