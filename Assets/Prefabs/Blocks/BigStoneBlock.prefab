@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 910766396460412409}
   m_Layer: 0
   m_Name: BigStoneBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 3
-  _blockStatesContainer: {fileID: 11400000, guid: 634cdbe7b776b44ba91a14b667225508, type: 2}
   _score: 3
+  _isInvisible: 0
   _spriteRenderer: {fileID: 6703122926177218374}
+  _blockStatesContainer: {fileID: 11400000, guid: 634cdbe7b776b44ba91a14b667225508, type: 2}
+  _pickUpPrefab: {fileID: 0}
 --- !u!212 &6703122926177218374
 SpriteRenderer:
   m_ObjectHideFlags: 0
