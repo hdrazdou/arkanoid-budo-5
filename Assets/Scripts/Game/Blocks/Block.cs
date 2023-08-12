@@ -1,6 +1,9 @@
+using Arkanoid.Game.PickUps;
+using Arkanoid.Game.Services;
+using Arkanoid.Utility;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game.Blocks
 {
     public class Block : MonoBehaviour
     {
@@ -14,6 +17,9 @@ namespace Arkanoid
         [Header("Components")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private BlockStatesContainer _blockStatesContainer;
+
+        [Header("PickUp")]
+        [SerializeField] private PickUp _pickUpPrefab;
 
         private bool _areStatesAvailable;
         private int _blockStateIndex;
@@ -61,6 +67,11 @@ namespace Arkanoid
 
         #region Private methods
 
+        private void CreatePickUp()
+        {
+            Instantiate(_pickUpPrefab, transform.position, Quaternion.identity);
+        }
+
         private void DestroyIfZeroHp()
         {
             if (_hp <= 0)
@@ -68,6 +79,11 @@ namespace Arkanoid
                 GameService.Instance.AddScore(_score);
 
                 Destroy(gameObject);
+
+                if (_pickUpPrefab != null)
+                {
+                    CreatePickUp();
+                }
             }
         }
 

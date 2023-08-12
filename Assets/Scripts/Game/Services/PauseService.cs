@@ -1,7 +1,8 @@
 using System;
+using Arkanoid.Utility;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game.Services
 {
     public class PauseService : SingletonMonoBehaviour<PauseService>
     {

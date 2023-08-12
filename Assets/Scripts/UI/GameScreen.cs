@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Arkanoid.Game.Services;
 using TMPro;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.UI
 {
     public class GameScreen : MonoBehaviour
     {
@@ -14,7 +15,6 @@ namespace Arkanoid
         [SerializeField] private Transform _heartParentTransform;
         private readonly List<GameObject> _hpHearts = new();
 
-
         #endregion
 
         #region Unity lifecycle
@@ -22,20 +22,12 @@ namespace Arkanoid
         private void Start()
         {
             CreateHearts();
-            
+
             GameService.Instance.OnScoreChanged += UpdateScore;
             GameService.Instance.OnHpChanged += UpdateHp;
 
             UpdateScore(GameService.Instance.TotalScore);
             UpdateHp(GameService.Instance.Hp);
-        }
-
-        private void CreateHearts()
-        {
-            for (int i = 0; i < GameService.Instance.Hp; i++)
-            {
-                _hpHearts.Add(Instantiate(_heartPrefab, _heartParentTransform));
-            }
         }
 
         private void OnDestroy()
@@ -47,6 +39,14 @@ namespace Arkanoid
         #endregion
 
         #region Private methods
+
+        private void CreateHearts()
+        {
+            for (int i = 0; i < GameService.Instance.Hp; i++)
+            {
+                _hpHearts.Add(Instantiate(_heartPrefab, _heartParentTransform));
+            }
+        }
 
         private void UpdateHp(int hp)
         {

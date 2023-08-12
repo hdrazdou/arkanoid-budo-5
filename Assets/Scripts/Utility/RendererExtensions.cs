@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Utility
 {
     public static class RendererExtensions
     {

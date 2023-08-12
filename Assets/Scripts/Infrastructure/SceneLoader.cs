@@ -1,6 +1,7 @@
+using Arkanoid.Utility;
 using UnityEngine.SceneManagement;
 
-namespace Arkanoid
+namespace Arkanoid.Infrastructure
 {
     public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
     {

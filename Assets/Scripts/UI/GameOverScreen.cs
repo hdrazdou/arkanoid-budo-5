@@ -1,8 +1,9 @@
+using Arkanoid.Game.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Arkanoid
+namespace Arkanoid.UI
 {
     public class GameOverScreen : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game.Blocks
 {
     [CreateAssetMenu(fileName = nameof(BlockStatesContainer), menuName = "Block/Block states")]
     public class BlockStatesContainer : ScriptableObject
@@ -8,6 +8,10 @@ namespace Arkanoid
         #region Variables
 
         [SerializeField] private Sprite[] _blockStatesSprites;
+
+        #endregion
+
+        #region Properties
 
         public Sprite[] BlockStatesSprites => _blockStatesSprites;
 

@@ -1,6 +1,7 @@
+using Arkanoid.Game.Services;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game
 {
     public class Ball : MonoBehaviour
     {
@@ -25,15 +26,6 @@ namespace Arkanoid
             PerformStartActions();
         }
 
-        private void PerformStartActions()
-        {
-            _isStarted = false;
-            
-            if (GameService.Instance.NeedAutoPlay)
-            {
-                StartTheBall();
-            }
-        }
         private void Update()
         {
             if (_isStarted)
@@ -46,6 +38,20 @@ namespace Arkanoid
             if (Input.GetMouseButtonDown(0))
             {
                 StartTheBall();
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+
+            if (!_isStarted)
+            {
+                Gizmos.DrawLine(transform.position, transform.position + (Vector3)GetRandomStartVelocity());
+            }
+            else
+            {
+                Gizmos.DrawLine(transform.position, transform.position + (Vector3)_rb.velocity);
             }
         }
 
@@ -75,6 +81,16 @@ namespace Arkanoid
         {
             Vector3 platformPosition = _platformTransform.position;
             transform.position = platformPosition + _offset;
+        }
+
+        private void PerformStartActions()
+        {
+            _isStarted = false;
+
+            if (GameService.Instance.NeedAutoPlay)
+            {
+                StartTheBall();
+            }
         }
 
         private void StartTheBall()

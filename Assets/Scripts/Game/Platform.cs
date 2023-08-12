@@ -1,6 +1,7 @@
+using Arkanoid.Game.Services;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game
 {
     public class Platform : MonoBehaviour
     {

@@ -1,6 +1,8 @@
+using Arkanoid.Game.Services;
+using Arkanoid.Utility;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game
 {
     public class Floor : SingletonMonoBehaviour<Floor>
     {

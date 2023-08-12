@@ -1,7 +1,8 @@
 using System;
-using UnityEngine;
+using Arkanoid.Game.Blocks;
+using Arkanoid.Utility;
 
-namespace Arkanoid
+namespace Arkanoid.Game.Services
 {
     public class LevelService : SingletonMonoBehaviour<LevelService>
     {

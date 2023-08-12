@@ -1,7 +1,9 @@
 using System;
+using Arkanoid.Infrastructure;
+using Arkanoid.Utility;
 using UnityEngine;
 
-namespace Arkanoid
+namespace Arkanoid.Game.Services
 {
     public class GameService : SingletonMonoBehaviour<GameService>
     {
