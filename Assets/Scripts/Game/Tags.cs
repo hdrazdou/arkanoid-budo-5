@@ -4,7 +4,7 @@ namespace Arkanoid.Game
     {
         #region Variables
 
-        public const string Block = "Block";
+        public const string Ball = "Ball";
         public const string Platform = "Platform";
 
         #endregion
