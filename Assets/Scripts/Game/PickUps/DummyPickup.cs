@@ -9,7 +9,7 @@ namespace Arkanoid.Game.PickUps
         protected override void PerformActions()
         {
             base.PerformActions();
-            
+
             Debug.Log("DummyPickup PerformActions");
         }
 

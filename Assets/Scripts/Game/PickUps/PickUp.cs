@@ -10,16 +10,10 @@ namespace Arkanoid.Game.PickUps
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag(Tags.Block))
-            {
-                return;
-            }
-            
-            Destroy(gameObject);
-            
             if (other.gameObject.CompareTag(Tags.Platform))
             {
                 PerformActions();
+                Destroy(gameObject);
             }
         }
 
@@ -27,10 +21,7 @@ namespace Arkanoid.Game.PickUps
 
         #region Protected methods
 
-        protected virtual void PerformActions()
-        {
-            
-        }
+        protected virtual void PerformActions() { }
 
         #endregion
     }

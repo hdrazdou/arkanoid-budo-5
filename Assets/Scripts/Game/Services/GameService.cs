@@ -73,7 +73,7 @@ namespace Arkanoid.Game.Services
             TotalScore += score;
         }
 
-        public void OnFloorHit()
+        public void BallHitFloor()
         {
             Hp--;
             OnHpChanged?.Invoke(Hp);
