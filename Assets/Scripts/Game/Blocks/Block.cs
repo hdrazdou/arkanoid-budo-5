@@ -19,6 +19,8 @@ namespace Arkanoid.Game.Blocks
         [SerializeField] private BlockStatesContainer _blockStatesContainer;
 
         [Header("PickUp")]
+        [Range(0, 100)]
+        [SerializeField] private int _pickUpDropChance = 50;
         [SerializeField] private PickUp _pickUpPrefab;
 
         private bool _areStatesAvailable;
@@ -69,7 +71,12 @@ namespace Arkanoid.Game.Blocks
 
         private void CreatePickUp()
         {
-            Instantiate(_pickUpPrefab, transform.position, Quaternion.identity);
+            int chance = Random.Range(0, 101);
+
+            if (_pickUpDropChance >= chance)
+            {
+                Instantiate(_pickUpPrefab, transform.position, Quaternion.identity);
+            }
         }
 
         private void DestroyIfZeroHp()
