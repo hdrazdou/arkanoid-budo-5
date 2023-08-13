@@ -83,7 +83,7 @@ namespace Arkanoid.Game.Blocks
         {
             if (_hp <= 0)
             {
-                GameService.Instance.AddScore(_score);
+                GameService.Instance.ChangeScore(_score);
 
                 Destroy(gameObject);
 

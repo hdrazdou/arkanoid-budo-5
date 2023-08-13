@@ -17,7 +17,7 @@ namespace Arkanoid.Game.PickUps
         {
             base.PerformActions();
 
-            GameService.Instance.AddScore(_scoreToChange);
+            GameService.Instance.ChangeScore(_scoreToChange);
         }
 
         #endregion

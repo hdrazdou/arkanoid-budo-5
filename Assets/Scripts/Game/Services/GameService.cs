@@ -68,11 +68,6 @@ namespace Arkanoid.Game.Services
 
         #region Public methods
 
-        public void AddScore(int score)
-        {
-            TotalScore += score;
-        }
-
         public void BallHitFloor()
         {
             Hp--;
@@ -83,6 +78,11 @@ namespace Arkanoid.Game.Services
             {
                 OnGameOver?.Invoke(TotalScore);
             }
+        }
+
+        public void ChangeScore(int score)
+        {
+            TotalScore = Mathf.Max(0, TotalScore + score) // чтоб TotalScore не мог быть ниже нуля
         }
 
         public void ReloadGame()
