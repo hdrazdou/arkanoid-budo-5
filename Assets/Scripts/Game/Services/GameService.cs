@@ -82,7 +82,7 @@ namespace Arkanoid.Game.Services
 
         public void ChangeScore(int score)
         {
-            TotalScore = Mathf.Max(0, TotalScore + score) // чтоб TotalScore не мог быть ниже нуля
+            TotalScore = Mathf.Max(0, TotalScore + score); // чтоб TotalScore не мог быть ниже нуля
         }
 
         public void ReloadGame()
