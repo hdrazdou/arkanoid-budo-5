@@ -516,8 +516,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9148150773985903741}
-  - component: {fileID: 2020576586986085955}
   - component: {fileID: 5344937930123243290}
+  - component: {fileID: 2020576586986085955}
   m_Layer: 5
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -546,14 +546,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2020576586986085955
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8822541057144142712}
-  m_CullTransparentMesh: 1
 --- !u!114 &5344937930123243290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,3 +560,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseScreenUi: {fileID: 5219370981676193668}
   _continueButton: {fileID: 3913740350625225385}
+--- !u!222 &2020576586986085955
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8822541057144142712}
+  m_CullTransparentMesh: 1

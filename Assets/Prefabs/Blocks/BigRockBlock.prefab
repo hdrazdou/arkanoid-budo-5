@@ -50,9 +50,10 @@ MonoBehaviour:
   _score: 1
   _isInvisible: 0
   _spriteRenderer: {fileID: 5907427334373776470}
-  _blockStatesContainer: {fileID: 11400000, guid: 8540eaeb6391e4f7cbc2841b6f526db0, type: 2}
+  _blockStatesContainer: {fileID: 11400000, guid: 67cbddbe2328c4966a419e5000973749, type: 2}
   _pickUpDropChance: 100
   _pickUpPrefab: {fileID: -8210979436665967553, guid: 0961fbc2596a24dfc88d0bf363b894b5, type: 3}
+  _pickUpPrefabs: []
 --- !u!212 &5907427334373776470
 SpriteRenderer:
   m_ObjectHideFlags: 0
