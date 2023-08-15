@@ -13,6 +13,7 @@ namespace Arkanoid.UI
         [SerializeField] private TMP_Text _hpLabel;
         [SerializeField] private GameObject _heartPrefab;
         [SerializeField] private Transform _heartParentTransform;
+
         private readonly List<GameObject> _hpHearts = new();
 
         #endregion

@@ -41,7 +41,6 @@ namespace Arkanoid.Game.Services
                 if (NeedNotify)
                 {
                     OnHpChanged?.Invoke(_hp);
-                    Debug.Log($"OnHpChanged");
                 }
             }
         }
