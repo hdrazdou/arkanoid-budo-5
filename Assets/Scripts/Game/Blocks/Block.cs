@@ -22,9 +22,7 @@ namespace Arkanoid.Game.Blocks
         [Header("PickUp")]
         [Range(0, 100)]
         [SerializeField] private int _pickUpDropChance = 50;
-        [SerializeField] private PickUp _pickUpPrefab;
         [SerializeField] private List<PickUp> _pickUpPrefabs;
-
 
         private bool _areStatesAvailable;
         private int _blockStateIndex;
@@ -75,7 +73,7 @@ namespace Arkanoid.Game.Blocks
         private void CreatePickUp()
         {
             int chance = Random.Range(0, 101);
-            int randomPickupIndex = Random.Range(0, _pickUpPrefabs.Count-1);
+            int randomPickupIndex = Random.Range(0, _pickUpPrefabs.Count);
 
             if (_pickUpDropChance >= chance)
             {
