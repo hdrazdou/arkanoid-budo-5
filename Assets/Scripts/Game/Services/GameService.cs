@@ -29,7 +29,22 @@ namespace Arkanoid.Game.Services
 
         #region Properties
 
-        public int Hp { get; private set; }
+        public int Hp
+        {
+            get => _hp;
+
+            private set
+            {
+                bool NeedNotify = _hp != value;
+                _hp = value;
+
+                if (NeedNotify)
+                {
+                    OnHpChanged?.Invoke(_hp);
+                    Debug.Log($"OnHpChanged");
+                }
+            }
+        }
 
         public bool NeedAutoPlay => _needAutoPlay;
 
@@ -71,13 +86,17 @@ namespace Arkanoid.Game.Services
         public void BallHitFloor()
         {
             Hp--;
-            OnHpChanged?.Invoke(Hp);
             ResetBall();
 
             if (Hp <= 0)
             {
                 OnGameOver?.Invoke(TotalScore);
             }
+        }
+
+        public void ChangeHp(int hp)
+        {
+            Hp += hp;
         }
 
         public void ChangeScore(int score)
@@ -115,8 +134,6 @@ namespace Arkanoid.Game.Services
         {
             Hp = 3;
             TotalScore = 0;
-
-            OnHpChanged?.Invoke(Hp); // для TotalScore не нужен Invoke, т.к. сама проперти шлет при изменении
         }
 
         private void SetHpOnStart()

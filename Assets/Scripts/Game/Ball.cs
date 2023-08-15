@@ -12,8 +12,12 @@ namespace Arkanoid.Game
         [SerializeField] private float _speed = 10;
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
+
+        [SerializeField] private Vector3 _offset;
+        private CircleCollider2D _collider;
+
         private bool _isStarted;
-        private Vector3 _offset;
+        private float _scale;
 
         #endregion
 
@@ -21,8 +25,10 @@ namespace Arkanoid.Game
 
         private void Start()
         {
-            _offset = transform.position - _platformTransform.position;
+            _collider = GetComponent<CircleCollider2D>();
 
+            _offset = transform.position - _platformTransform.position;
+            
             PerformStartActions();
         }
 
@@ -59,6 +65,16 @@ namespace Arkanoid.Game
 
         #region Public methods
 
+        public void ChangeBallSizeByScale(float scale)
+        {
+            Vector3 ballScale = transform.localScale;
+            ballScale.x *= scale;
+            ballScale.y *= scale;
+            transform.localScale = ballScale;
+
+            ChangeOffsetByScale(scale);
+        }
+
         public void ResetBall()
         {
             MoveWithPlatform();
@@ -68,6 +84,22 @@ namespace Arkanoid.Game
         #endregion
 
         #region Private methods
+
+        private void ChangeOffsetByScale(float scale)
+        {
+            float newRadius = GetRadius();
+            float oldRadius = newRadius / scale;
+            
+            float offsetShift = (newRadius - oldRadius) * transform.localScale.x;
+
+            _offset.y += offsetShift;
+        }
+
+        private float GetRadius()
+        {
+            float radius = _collider.radius;
+            return radius;
+        }
 
         private Vector2 GetRandomStartVelocity()
         {
@@ -98,7 +130,13 @@ namespace Arkanoid.Game
             _isStarted = true;
             _rb.velocity = GetRandomStartVelocity();
         }
-
+        
         #endregion
+
+        public void ChangeBallSpeed(float speed)
+        {
+            _rb.velocity *= speed;
+            _speed *= speed;
+        }
     }
 }

@@ -52,6 +52,11 @@ namespace Arkanoid.UI
         {
             _hpLabel.text = $"Lives: {hp}";
 
+            if (hp > _hpHearts.Count)
+            {
+                CreateHearts();
+            }
+
             for (int i = 0; i < _hpHearts.Count; i++)
             {
                 _hpHearts[i].gameObject.SetActive(hp > i);

@@ -51,5 +51,12 @@ namespace Arkanoid.Game
         }
 
         #endregion
+
+        public void ChangePlatformWidthByScale(float scale)
+        {
+            Vector3 platformScale = transform.localScale;
+            platformScale.x *= scale;
+            transform.localScale = platformScale;
+        }
     }
 }
