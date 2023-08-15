@@ -136,7 +136,6 @@ namespace Arkanoid.Game
         public void ChangeBallSpeed(float speed)
         {
             _rb.velocity *= speed;
-            _speed *= speed;
         }
     }
 }
