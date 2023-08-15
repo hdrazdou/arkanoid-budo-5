@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Arkanoid.Game.PickUps;
 using Arkanoid.Game.Services;
 using Arkanoid.Utility;
@@ -22,6 +23,8 @@ namespace Arkanoid.Game.Blocks
         [Range(0, 100)]
         [SerializeField] private int _pickUpDropChance = 50;
         [SerializeField] private PickUp _pickUpPrefab;
+        [SerializeField] private List<PickUp> _pickUpPrefabs;
+
 
         private bool _areStatesAvailable;
         private int _blockStateIndex;
@@ -72,10 +75,11 @@ namespace Arkanoid.Game.Blocks
         private void CreatePickUp()
         {
             int chance = Random.Range(0, 101);
+            int randomPickupIndex = Random.Range(0, _pickUpPrefabs.Count-1);
 
             if (_pickUpDropChance >= chance)
             {
-                Instantiate(_pickUpPrefab, transform.position, Quaternion.identity);
+                Instantiate(_pickUpPrefabs[randomPickupIndex], transform.position, Quaternion.identity);
             }
         }
 
@@ -87,7 +91,7 @@ namespace Arkanoid.Game.Blocks
 
                 Destroy(gameObject);
 
-                if (_pickUpPrefab != null)
+                if (_pickUpPrefabs != null)
                 {
                     CreatePickUp();
                 }
