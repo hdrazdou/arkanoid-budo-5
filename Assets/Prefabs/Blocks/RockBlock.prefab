@@ -53,6 +53,9 @@ MonoBehaviour:
   _blockStatesContainer: {fileID: 11400000, guid: 8540eaeb6391e4f7cbc2841b6f526db0, type: 2}
   _pickUpDropChance: 100
   _pickUpPrefab: {fileID: 1487746757086303524, guid: eb06ad50322374a598f8238b4ac36683, type: 3}
+  _pickUpPrefabs:
+  - {fileID: 6813934380702143352, guid: 55136bdf45f754fbb818b82e3041f893, type: 3}
+  - {fileID: 7838964703545741403, guid: ce5add97ddfb74f5e9228c1906acf087, type: 3}
 --- !u!212 &5907427334373776470
 SpriteRenderer:
   m_ObjectHideFlags: 0

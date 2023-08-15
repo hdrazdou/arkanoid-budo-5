@@ -91,7 +91,7 @@ namespace Arkanoid.Game.Blocks
 
                 Destroy(gameObject);
 
-                if (_pickUpPrefabs != null)
+                if (_pickUpPrefabs.Count > 0)
                 {
                     CreatePickUp();
                 }
