@@ -52,7 +52,6 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 843627301401567941}
   _blockStatesContainer: {fileID: 11400000, guid: 7793a3ee6c6624ed7ae0444412709d93, type: 2}
   _pickUpDropChance: 100
-  _pickUpPrefab: {fileID: -3264264724056847811, guid: 5ba3c62cdde92446e9f2c24d15e4526b, type: 3}
   _pickUpPrefabs: []
 --- !u!212 &843627301401567941
 SpriteRenderer:
@@ -149,5 +148,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
