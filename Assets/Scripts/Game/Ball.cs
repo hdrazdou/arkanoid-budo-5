@@ -9,14 +9,14 @@ namespace Arkanoid.Game
 
         [SerializeField] private Transform _platformTransform;
         [SerializeField] private Rigidbody2D _rb;
-        [SerializeField] private float _speed = 10;
+        [SerializeField] private float _initialSpeed = 10;
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
-
-        [SerializeField] private Vector3 _offset;
+        [SerializeField] private float _currentSpeed;
         private CircleCollider2D _collider;
-
         private bool _isStarted;
+
+        private Vector3 _offset;
         private float _scale;
 
         #endregion
@@ -25,10 +25,11 @@ namespace Arkanoid.Game
 
         private void Start()
         {
+
             _collider = GetComponent<CircleCollider2D>();
 
             _offset = transform.position - _platformTransform.position;
-            
+
             PerformStartActions();
         }
 
@@ -68,11 +69,28 @@ namespace Arkanoid.Game
         public void ChangeBallSizeByScale(float scale)
         {
             Vector3 ballScale = transform.localScale;
+
             ballScale.x *= scale;
-            ballScale.y *= scale;
+            ballScale.x = Mathf.Clamp(ballScale.x, 0.5f, 5);
+
+            ballScale.y = ballScale.x;
+
             transform.localScale = ballScale;
 
             ChangeOffsetByScale(scale);
+        }
+
+        public void ChangeBallSpeed(float speedMultiplier)
+        {
+            _currentSpeed *= speedMultiplier;
+
+            if (_currentSpeed < 0.5f || _currentSpeed > 50)
+            {
+                speedMultiplier = AdjustSpeedMultiplier(speedMultiplier);
+                _currentSpeed *= speedMultiplier;
+            }
+
+            _rb.velocity *= speedMultiplier;
         }
 
         public void ResetBall()
@@ -85,11 +103,26 @@ namespace Arkanoid.Game
 
         #region Private methods
 
+        private float AdjustSpeedMultiplier(float speedMultiplier)
+        {
+            if (_currentSpeed > 50)
+            {
+                speedMultiplier = 50 / _currentSpeed * speedMultiplier;
+            }
+
+            if (_currentSpeed < 0.5f)
+            {
+                speedMultiplier = 0.5f / _currentSpeed * speedMultiplier;
+            }
+
+            return speedMultiplier;
+        }
+
         private void ChangeOffsetByScale(float scale)
         {
             float newRadius = GetRadius();
             float oldRadius = newRadius / scale;
-            
+
             float offsetShift = (newRadius - oldRadius) * transform.localScale.x;
 
             _offset.y += offsetShift;
@@ -106,7 +139,7 @@ namespace Arkanoid.Game
             float x = Random.Range(_xLimitation.x, _xLimitation.y);
             float y = Random.Range(_yLimitation.x, _yLimitation.y);
 
-            return new Vector2(x, y).normalized * _speed;
+            return new Vector2(x, y).normalized * _initialSpeed;
         }
 
         private void MoveWithPlatform()
@@ -118,6 +151,8 @@ namespace Arkanoid.Game
         private void PerformStartActions()
         {
             _isStarted = false;
+            
+            _currentSpeed = _initialSpeed;
 
             if (GameService.Instance.NeedAutoPlay)
             {
@@ -130,12 +165,7 @@ namespace Arkanoid.Game
             _isStarted = true;
             _rb.velocity = GetRandomStartVelocity();
         }
-        
-        #endregion
 
-        public void ChangeBallSpeed(float speed)
-        {
-            _rb.velocity *= speed;
-        }
+        #endregion
     }
 }

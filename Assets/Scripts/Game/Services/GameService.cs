@@ -21,6 +21,7 @@ namespace Arkanoid.Game.Services
 
         #region Events
 
+        public event Action OnBallHitFloor;
         public event Action<int> OnGameOver;
         public event Action<int> OnHpChanged;
         public event Action<int> OnScoreChanged;
@@ -84,6 +85,8 @@ namespace Arkanoid.Game.Services
 
         public void BallHitFloor()
         {
+            OnBallHitFloor?.Invoke();
+
             Hp--;
             ResetBall();
 

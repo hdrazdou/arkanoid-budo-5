@@ -1681,6 +1681,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 3845032094054428925, guid: 92063826a9f9340cf83d91988f1d909e, type: 3}
+      propertyPath: _pickUpPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845032094054428925, guid: 92063826a9f9340cf83d91988f1d909e, type: 3}
+      propertyPath: _pickUpPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: -8210979436665967553, guid: 0961fbc2596a24dfc88d0bf363b894b5, type: 3}
+    - target: {fileID: 3845032094054428925, guid: 92063826a9f9340cf83d91988f1d909e, type: 3}
+      propertyPath: _pickUpPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845032094054428925, guid: 92063826a9f9340cf83d91988f1d909e, type: 3}
+      propertyPath: _pickUpPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6773282221231301961, guid: 92063826a9f9340cf83d91988f1d909e, type: 3}
       propertyPath: m_RootOrder
       value: 0

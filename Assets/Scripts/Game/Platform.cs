@@ -31,7 +31,10 @@ namespace Arkanoid.Game
         public void ChangePlatformWidthByScale(float scale)
         {
             Vector3 platformScale = transform.localScale;
+            
             platformScale.x *= scale;
+            platformScale.x = Mathf.Clamp(platformScale.x, 0.5f, 5);
+            
             transform.localScale = platformScale;
         }
 
