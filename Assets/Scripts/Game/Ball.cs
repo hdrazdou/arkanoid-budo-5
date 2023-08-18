@@ -25,7 +25,6 @@ namespace Arkanoid.Game
 
         private void Start()
         {
-
             _collider = GetComponent<CircleCollider2D>();
 
             _offset = transform.position - _platformTransform.position;
@@ -72,12 +71,13 @@ namespace Arkanoid.Game
 
             ballScale.x *= scale;
             ballScale.x = Mathf.Clamp(ballScale.x, 0.5f, 5);
-
             ballScale.y = ballScale.x;
 
-            transform.localScale = ballScale;
-
-            ChangeOffsetByScale(scale);
+            if (ballScale != transform.localScale)
+            {
+                transform.localScale = ballScale;
+                ChangeOffsetByScale(scale);
+            }
         }
 
         public void ChangeBallSpeed(float speedMultiplier)
@@ -151,7 +151,7 @@ namespace Arkanoid.Game
         private void PerformStartActions()
         {
             _isStarted = false;
-            
+
             _currentSpeed = _initialSpeed;
 
             if (GameService.Instance.NeedAutoPlay)
