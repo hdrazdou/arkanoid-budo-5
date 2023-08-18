@@ -210,6 +210,57 @@ Transform:
   - {fileID: 6302952549152765053}
   - {fileID: 8475452673485055383}
   - {fileID: 4902999513184442790}
+  - {fileID: 2693977785102154464}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7779479209659174937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2693977785102154464}
+  - component: {fileID: 2026812281796227207}
+  m_Layer: 0
+  m_Name: PickUpService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2693977785102154464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779479209659174937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502817234434983254}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026812281796227207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779479209659174937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389106d225754845bd1b5ba77de4b5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpDropChance: 100
+  _pickUps:
+  - PickUpPrefab: {fileID: 6813934380702143352, guid: 55136bdf45f754fbb818b82e3041f893, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 1487746757086303524, guid: eb06ad50322374a598f8238b4ac36683, type: 3}
+    SpawnWeight: 20
