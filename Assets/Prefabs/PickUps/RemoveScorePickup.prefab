@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1944029409516445828}
   - component: {fileID: 3642077007297239309}
   - component: {fileID: 8667113810786245758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RemoveScorePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.3333334}
+    oldSize: {x: 1.1428572, y: 1.1428572}
     newSize: {x: 0.12857144, y: 0.15714286}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

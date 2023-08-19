@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 387808673}
   - component: {fileID: 387808674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 545025206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 842075837}
   - component: {fileID: 842075838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,8 +1257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1668968167}
   - component: {fileID: 1668968169}
-  - component: {fileID: 1668968168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,18 +1279,6 @@ Transform:
   m_Father: {fileID: 545025206}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1668968168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668968166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d5b701d5fa4533a9b7abf83e89b2ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1668968169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1321,7 +1308,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1541,7 +1528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911281036}
   - component: {fileID: 1911281037}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,6 +2047,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
+      propertyPath: _pickUps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
+      propertyPath: _pickUps.Array.data[1].SpawnWeight
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
+      propertyPath: _pickUps.Array.data[0].PickUpPrefab
+      value: 
+      objectReference: {fileID: -2317019157000743755, guid: e8b1be47f082a489e86bb20eaf0713b4, type: 3}
+    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
+      propertyPath: _pickUps.Array.data[1].PickUpPrefab
+      value: 
+      objectReference: {fileID: -8210979436665967553, guid: 4726a72c646cc494c97210a1cd0a540a, type: 3}
     - target: {fileID: 5665078852144498307, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: m_Name
       value: GameServicesContainer

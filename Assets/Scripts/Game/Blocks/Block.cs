@@ -1,3 +1,4 @@
+using System;
 using Arkanoid.Game.Services;
 using Arkanoid.Utility;
 using UnityEngine;
@@ -22,10 +23,19 @@ namespace Arkanoid.Game.Blocks
 
         #endregion
 
+        #region Events
+
+        public static event Action<Block> OnCreated;
+        public static event Action<Block> OnDestroyed;
+
+        #endregion
+
         #region Unity lifecycle
 
         private void Start()
         {
+            OnCreated?.Invoke(this);
+
             DestroyIfZeroHp();
 
             HideIfInvisible();
@@ -37,6 +47,11 @@ namespace Arkanoid.Game.Blocks
                 _blockStateIndex = 0;
                 SetBlockStates();
             }
+        }
+
+        private void OnDestroy()
+        {
+            OnDestroyed?.Invoke(this);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

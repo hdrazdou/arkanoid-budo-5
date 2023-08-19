@@ -1,5 +1,7 @@
+using System;
 using Arkanoid.Game.Services;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Arkanoid.Game
 {
@@ -9,10 +11,9 @@ namespace Arkanoid.Game
 
         [SerializeField] private Transform _platformTransform;
         [SerializeField] private Rigidbody2D _rb;
-        [SerializeField] private float _initialSpeed = 10;
+        [SerializeField] private float _speed = 10;
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
-        [SerializeField] private float _currentSpeed;
         private CircleCollider2D _collider;
         private bool _isStarted;
 
@@ -21,15 +22,32 @@ namespace Arkanoid.Game
 
         #endregion
 
+        #region Events
+
+        public static event Action<Ball> OnCreated;
+        public static event Action<Ball> OnDestroyed;
+
+        #endregion
+
         #region Unity lifecycle
 
-        private void Start()
+        private void Awake()
         {
             _collider = GetComponent<CircleCollider2D>();
 
             _offset = transform.position - _platformTransform.position;
 
             PerformStartActions();
+        }
+
+        private void Start()
+        {
+            OnCreated?.Invoke(this);
+
+            if (GameService.Instance.NeedAutoPlay)
+            {
+                StartTheBall();
+            }
         }
 
         private void Update()
@@ -47,13 +65,22 @@ namespace Arkanoid.Game
             }
         }
 
+        private void OnDestroy()
+        {
+            OnDestroyed?.Invoke(this);
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
 
             if (!_isStarted)
             {
-                Gizmos.DrawLine(transform.position, transform.position + (Vector3)GetRandomStartVelocity());
+                Vector2 firstVector = new Vector2(_xLimitation.x, _yLimitation.x).normalized * _speed;
+                Gizmos.DrawLine(transform.position, transform.position + (Vector3)firstVector);
+
+                Vector2 secondVector = new Vector2(_xLimitation.y, _yLimitation.y).normalized * _speed;
+                Gizmos.DrawLine(transform.position, transform.position + (Vector3)secondVector);
             }
             else
             {
@@ -82,15 +109,26 @@ namespace Arkanoid.Game
 
         public void ChangeBallSpeed(float speedMultiplier)
         {
-            _currentSpeed *= speedMultiplier;
-
-            if (_currentSpeed < 0.5f || _currentSpeed > 50)
-            {
-                speedMultiplier = AdjustSpeedMultiplier(speedMultiplier);
-                _currentSpeed *= speedMultiplier;
-            }
-
             _rb.velocity *= speedMultiplier;
+
+            AdjustBallSpeed();
+        }
+
+        public Ball Clone()
+        {
+            Ball clone = Instantiate(this, transform.position, Quaternion.identity);
+            clone._isStarted = _isStarted;
+            clone._offset = _offset;
+            clone._rb.velocity = _rb.velocity;
+
+            return clone;
+        }
+
+        public void RandomizeDirection()
+        {
+            Vector2 randomDirection = Random.insideUnitCircle.normalized;
+            float currentSpeed = _rb.velocity.magnitude;
+            _rb.velocity = randomDirection * currentSpeed;
         }
 
         public void ResetBall()
@@ -103,19 +141,20 @@ namespace Arkanoid.Game
 
         #region Private methods
 
-        private float AdjustSpeedMultiplier(float speedMultiplier)
+        private void AdjustBallSpeed()
         {
-            if (_currentSpeed > 50)
+            float maxSpeed = 40;
+            float minSpeed = 3;
+
+            if (_rb.velocity.magnitude > maxSpeed)
             {
-                speedMultiplier = 50 / _currentSpeed * speedMultiplier;
+                _rb.velocity = _rb.velocity.normalized * maxSpeed;
             }
 
-            if (_currentSpeed < 0.5f)
+            if (_rb.velocity.magnitude < minSpeed)
             {
-                speedMultiplier = 0.5f / _currentSpeed * speedMultiplier;
+                _rb.velocity = _rb.velocity.normalized * minSpeed;
             }
-
-            return speedMultiplier;
         }
 
         private void ChangeOffsetByScale(float scale)
@@ -139,7 +178,7 @@ namespace Arkanoid.Game
             float x = Random.Range(_xLimitation.x, _xLimitation.y);
             float y = Random.Range(_yLimitation.x, _yLimitation.y);
 
-            return new Vector2(x, y).normalized * _initialSpeed;
+            return new Vector2(x, y).normalized * _speed;
         }
 
         private void MoveWithPlatform()
@@ -151,13 +190,6 @@ namespace Arkanoid.Game
         private void PerformStartActions()
         {
             _isStarted = false;
-
-            _currentSpeed = _initialSpeed;
-
-            if (GameService.Instance.NeedAutoPlay)
-            {
-                StartTheBall();
-            }
         }
 
         private void StartTheBall()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 211635483288591758}
   - component: {fileID: 8595805441630505643}
   - component: {fileID: 7124015296329040291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -49,9 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platformTransform: {fileID: 0}
   _rb: {fileID: 8595805441630505643}
-  _speed: 10
+  _initialSpeed: 10
   _xLimitation: {x: 1, y: 2}
   _yLimitation: {x: 3, y: 4}
+  _currentSpeed: 0
 --- !u!212 &211635483288591758
 SpriteRenderer:
   m_ObjectHideFlags: 0

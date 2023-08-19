@@ -21,7 +21,9 @@ namespace Arkanoid.Game.PickUps
 
         #region Protected methods
 
-        protected virtual void PerformActions() { }
+        protected virtual void PerformActions()
+        {
+        }
 
         #endregion
     }

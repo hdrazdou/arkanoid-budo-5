@@ -23,6 +23,17 @@ namespace Arkanoid.Utility
             Instance = gameObject.GetComponent<T>();
             transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
+
+            OnAwake();
+        }
+
+        #endregion
+
+        #region Protected methods
+
+        protected virtual void OnAwake()
+        {
+            
         }
 
         #endregion

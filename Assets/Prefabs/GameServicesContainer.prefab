@@ -260,7 +260,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickUpDropChance: 100
   _pickUps:
-  - PickUpPrefab: {fileID: 6813934380702143352, guid: 55136bdf45f754fbb818b82e3041f893, type: 3}
+  - PickUpPrefab: {fileID: -2317019157000743755, guid: e8b1be47f082a489e86bb20eaf0713b4, type: 3}
     SpawnWeight: 80
-  - PickUpPrefab: {fileID: 1487746757086303524, guid: eb06ad50322374a598f8238b4ac36683, type: 3}
-    SpawnWeight: 20

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1944029409516445828}
   - component: {fileID: 3642077007297239309}
   - component: {fileID: 8667113810786245758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IncreasePlatformWidthPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.53333336, y: 0.73333335}
+    oldSize: {x: 0.72727275, y: 1}
     newSize: {x: 0.12857144, y: 0.15714286}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
