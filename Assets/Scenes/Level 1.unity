@@ -2047,22 +2047,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
-      propertyPath: _pickUps.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
-      propertyPath: _pickUps.Array.data[1].SpawnWeight
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
-      propertyPath: _pickUps.Array.data[0].PickUpPrefab
-      value: 
-      objectReference: {fileID: -2317019157000743755, guid: e8b1be47f082a489e86bb20eaf0713b4, type: 3}
-    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
-      propertyPath: _pickUps.Array.data[1].PickUpPrefab
-      value: 
-      objectReference: {fileID: -8210979436665967553, guid: 4726a72c646cc494c97210a1cd0a540a, type: 3}
     - target: {fileID: 5665078852144498307, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: m_Name
       value: GameServicesContainer
