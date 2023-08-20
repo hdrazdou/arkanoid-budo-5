@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e4589ec0ed483ca474e88c6e7e898d, type: 3}
+  m_Name: EpxlosiveBlockStates
+  m_EditorClassIdentifier: 
+  _blockStatesSprites:
+  - {fileID: 21300000, guid: 3c41fad2012f9465eb5fd09aa6f52f17, type: 3}
+  - {fileID: 21300000, guid: c95af1b6fbe0f4c1f8fddd137644bc9a, type: 3}
+  - {fileID: 21300000, guid: 50a65e3f3e4a448069aff2c0615b2b6b, type: 3}
