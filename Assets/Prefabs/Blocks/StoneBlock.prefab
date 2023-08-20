@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2450201177478430552}
   - component: {fileID: 4997229808895526680}
   - component: {fileID: 6561962290418917669}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StoneBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,8 +51,6 @@ MonoBehaviour:
   _isInvisible: 0
   _spriteRenderer: {fileID: 4997229808895526680}
   _blockStatesContainer: {fileID: 11400000, guid: 67744518699a748c887261ee451f2017, type: 2}
-  _pickUpDropChance: 100
-  _pickUpPrefab: {fileID: 6813934380702143352, guid: 55136bdf45f754fbb818b82e3041f893, type: 3}
 --- !u!212 &4997229808895526680
 SpriteRenderer:
   m_ObjectHideFlags: 0

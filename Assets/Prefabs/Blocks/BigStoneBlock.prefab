@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3835421955072509374}
   - component: {fileID: 6703122926177218374}
   - component: {fileID: 910766396460412409}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigStoneBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,8 +51,6 @@ MonoBehaviour:
   _isInvisible: 0
   _spriteRenderer: {fileID: 6703122926177218374}
   _blockStatesContainer: {fileID: 11400000, guid: 634cdbe7b776b44ba91a14b667225508, type: 2}
-  _pickUpDropChance: 100
-  _pickUpPrefab: {fileID: 6813934380702143352, guid: 3cb850891904d4d889e213486f057e50, type: 3}
 --- !u!212 &6703122926177218374
 SpriteRenderer:
   m_ObjectHideFlags: 0

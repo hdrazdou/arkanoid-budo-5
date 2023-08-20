@@ -4,7 +4,7 @@ using Arkanoid.Utility;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Arkanoid.Game.Blocks
+namespace Arkanoid.Game.Services
 {
     public class PickUpService : SingletonMonoBehaviour<PickUpService>
     {

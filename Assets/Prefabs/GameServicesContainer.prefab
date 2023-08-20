@@ -258,7 +258,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389106d225754845bd1b5ba77de4b5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickUpDropChance: 100
+  _pickUpDropChance: 50
   _pickUps:
+  - PickUpPrefab: {fileID: 6813934380702143352, guid: 55136bdf45f754fbb818b82e3041f893, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 7838964703545741403, guid: ce5add97ddfb74f5e9228c1906acf087, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 9116971410802512877, guid: 15daba7e8a8274120bb85b82223d77f5, type: 3}
+    SpawnWeight: 80
   - PickUpPrefab: {fileID: -2317019157000743755, guid: e8b1be47f082a489e86bb20eaf0713b4, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 1487746757086303524, guid: eb06ad50322374a598f8238b4ac36683, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: -8210979436665967553, guid: 4726a72c646cc494c97210a1cd0a540a, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 1487746757086303524, guid: a3f4d9392e8434522bd4fdbcb7b42b93, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: -8210979436665967553, guid: 0961fbc2596a24dfc88d0bf363b894b5, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: -3264264724056847811, guid: 5ba3c62cdde92446e9f2c24d15e4526b, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 6813934380702143352, guid: 3cb850891904d4d889e213486f057e50, type: 3}
+    SpawnWeight: 80
+  - PickUpPrefab: {fileID: 4849980086181618818, guid: 550efd5f2289d4242a56288a8e62610e, type: 3}
     SpawnWeight: 80

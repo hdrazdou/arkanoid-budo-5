@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 346992624555590262}
   - component: {fileID: 1847008114184232065}
   - component: {fileID: 2313282463352131378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigRoundWoodBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,9 +51,6 @@ MonoBehaviour:
   _isInvisible: 0
   _spriteRenderer: {fileID: 1847008114184232065}
   _blockStatesContainer: {fileID: 11400000, guid: a76a2fb2041de45f5a17825c5dbb1cf0, type: 2}
-  _pickUpDropChance: 100
-  _pickUpPrefab: {fileID: 9116971410802512877, guid: 15daba7e8a8274120bb85b82223d77f5, type: 3}
-  _pickUpPrefabs: []
 --- !u!212 &1847008114184232065
 SpriteRenderer:
   m_ObjectHideFlags: 0

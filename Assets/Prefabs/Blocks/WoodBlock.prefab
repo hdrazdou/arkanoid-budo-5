@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3845032094054428925}
   - component: {fileID: 5907427334373776470}
   - component: {fileID: 4033700256828506746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,8 +51,6 @@ MonoBehaviour:
   _isInvisible: 0
   _spriteRenderer: {fileID: 5907427334373776470}
   _blockStatesContainer: {fileID: 11400000, guid: 8540eaeb6391e4f7cbc2841b6f526db0, type: 2}
-  _pickUpDropChance: 92
-  _pickUpPrefab: {fileID: 8892176073547369689, guid: bc6c21569766e49da823752f1fae01b2, type: 3}
 --- !u!212 &5907427334373776470
 SpriteRenderer:
   m_ObjectHideFlags: 0

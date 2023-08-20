@@ -24,8 +24,8 @@ namespace Arkanoid.Game
 
         #region Events
 
-        public static event Action <Ball> OnCreated;
-        public static event Action <Ball> OnDestroyed;
+        public static event Action<Ball> OnCreated;
+        public static event Action<Ball> OnDestroyed;
 
         #endregion
 
@@ -50,11 +50,6 @@ namespace Arkanoid.Game
             }
         }
 
-        private void OnDestroy()
-        {
-            OnDestroyed?.Invoke(this);
-        }
-
         private void Update()
         {
             if (_isStarted)
@@ -70,6 +65,11 @@ namespace Arkanoid.Game
             }
         }
 
+        private void OnDestroy()
+        {
+            OnDestroyed?.Invoke(this);
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
@@ -78,7 +78,7 @@ namespace Arkanoid.Game
             {
                 Vector2 firstVector = new Vector2(_xLimitation.x, _yLimitation.x).normalized * _speed;
                 Gizmos.DrawLine(transform.position, transform.position + (Vector3)firstVector);
-                
+
                 Vector2 secondVector = new Vector2(_xLimitation.y, _yLimitation.y).normalized * _speed;
                 Gizmos.DrawLine(transform.position, transform.position + (Vector3)secondVector);
             }

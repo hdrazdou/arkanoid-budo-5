@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6353700538823828731}
   - component: {fileID: 7264868209932602898}
   - component: {fileID: 2681243460168994651}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TriangleWoodBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,8 +51,6 @@ MonoBehaviour:
   _isInvisible: 0
   _spriteRenderer: {fileID: 7264868209932602898}
   _blockStatesContainer: {fileID: 11400000, guid: a5d83c1c5cd4b4f9a9dc58095f766503, type: 2}
-  _pickUpDropChance: 100
-  _pickUpPrefab: {fileID: 1487746757086303524, guid: a3f4d9392e8434522bd4fdbcb7b42b93, type: 3}
 --- !u!212 &7264868209932602898
 SpriteRenderer:
   m_ObjectHideFlags: 0
