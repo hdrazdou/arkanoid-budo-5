@@ -1,3 +1,4 @@
+using Arkanoid.Game.Services;
 using UnityEngine;
 
 namespace Arkanoid.Game.PickUps
@@ -16,8 +17,10 @@ namespace Arkanoid.Game.PickUps
         {
             base.PerformActions();
 
-            Ball ball = FindObjectOfType<Ball>();
-            ball.ChangeBallSpeed(_speed);
+            foreach (Ball ball in LevelService.Instance.Balls)
+            {
+                ball.ChangeBallSpeed(_speed);
+            }
         }
 
         #endregion

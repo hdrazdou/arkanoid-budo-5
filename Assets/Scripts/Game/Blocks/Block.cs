@@ -76,17 +76,28 @@ namespace Arkanoid.Game.Blocks
 
         #endregion
 
+        #region Public methods
+
+        public void ForceDestroy()
+        {
+            PerformDestroyActions();
+        }
+
+        #endregion
+
+        #region Protected methods
+
+        protected virtual void OnDestroyedActions() { }
+
+        #endregion
+
         #region Private methods
 
         private void DestroyIfZeroHp()
         {
             if (_hp <= 0)
             {
-                GameService.Instance.ChangeScore(_score);
-
-                Destroy(gameObject);
-
-                PickUpService.Instance.CreatePickUp(transform.position);
+                PerformDestroyActions();
             }
         }
 
@@ -96,6 +107,14 @@ namespace Arkanoid.Game.Blocks
             {
                 _spriteRenderer.SetAlpha(0);
             }
+        }
+
+        private void PerformDestroyActions()
+        {
+            GameService.Instance.ChangeScore(_score);
+            Destroy(gameObject);
+            PickUpService.Instance.CreatePickUp(transform.position);
+            OnDestroyedActions();
         }
 
         private void SetBlockStates()
