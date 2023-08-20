@@ -1,0 +1,39 @@
+Arkanoid Game I made on Unity training course.
+
+Link to play:
+
+What I've done:
+- Moving Platform (by Mouse input)
+- Jumping Ball (RigidBody and Collider)
+- Moving Ball synchronously with Platform
+- Blocks (to be broken by Ball hits)
+- Different states (Sprites) when Blocks are being broken
+- Changing Level (Scene) when all Blocks are broken
+- Scoring feature (different score for different Blocks)
+- HP feature (Hearts sprites) 
+- Game Pause (by esc)
+- Game Over screen with Restart button
+- Trail for the Ball
+- PickUps feature (Bonus) when Blocks are broken:
+1. Changing Block size
+2. Changing Platform size
+3. Changing Ball speed
+4. Changing User's HP and Score 
+5. Cloning active Ball(s)
+6. Ball sticking to the Platform
+
+What I've used:
+- Prefabs for GameObjects
+- Game Services to manage the features (GameService, LevelService, PickUpService, PauseService)
+- NameSpacing in Code
+- ScriptableObject (as config for Blocks states)
+- Singleton pattern (for saving GameObjects between scenes)
+- Prototype pattern (for cloning the Ball)
+- Dynamic Instantiate of GameObjects
+- DontDestroyOnLoad method
+
+What I've learned:
+- Familiarize with Unity lifecycle (Awake, Start, OnDestroy...)
+- Familiarize with Unity 2D physics
+- Collisions and Colliders (also OverlapCircleAll)
+
