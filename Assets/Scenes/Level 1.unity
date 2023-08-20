@@ -2120,10 +2120,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
-      propertyPath: _pickUpDropChance
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 5665078852144498307, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: m_Name
       value: GameServicesContainer
@@ -2705,18 +2701,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4643355102838185684, guid: d25d705a4d57a425f87d5d1b03a4a829, type: 3}
-      propertyPath: _xLimitation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4643355102838185684, guid: d25d705a4d57a425f87d5d1b03a4a829, type: 3}
-      propertyPath: _xLimitation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4643355102838185684, guid: d25d705a4d57a425f87d5d1b03a4a829, type: 3}
-      propertyPath: _yLimitation.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4643355102838185684, guid: d25d705a4d57a425f87d5d1b03a4a829, type: 3}
       propertyPath: _platformTransform
       value: 

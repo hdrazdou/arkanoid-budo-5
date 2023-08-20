@@ -50,8 +50,8 @@ MonoBehaviour:
   _platformTransform: {fileID: 0}
   _rb: {fileID: 8595805441630505643}
   _speed: 10
-  _xLimitation: {x: -1, y: 2}
-  _yLimitation: {x: 3, y: 5}
+  _xLimitation: {x: 0, y: 1}
+  _yLimitation: {x: 1, y: 5}
 --- !u!212 &211635483288591758
 SpriteRenderer:
   m_ObjectHideFlags: 0
