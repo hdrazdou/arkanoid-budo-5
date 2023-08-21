@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Arkanoid.Game.Blocks;
 using Arkanoid.Utility;
+using UnityEngine;
 
 namespace Arkanoid.Game.Services
 {
@@ -11,6 +12,7 @@ namespace Arkanoid.Game.Services
 
         private readonly List<Ball> _balls = new();
         private readonly List<Block> _blocks = new();
+        private LayerMask _blockMaskToExplode;
 
         #endregion
 
@@ -35,6 +37,31 @@ namespace Arkanoid.Game.Services
 
             Block.OnCreated -= OnBlockCreated;
             Block.OnDestroyed -= OnBlockDestroyed;
+        }
+
+        #endregion
+
+        #region Public methods
+
+        public void ExplodeBlock(Transform blockTransform, float radius)
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(blockTransform.position, radius, _blockMaskToExplode);
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.TryGetComponent(out Block block))
+                {
+                    block.ForceDestroy();
+                }
+            }
+        }
+
+        public void MakeBallsExplosive(float explosionRadius)
+        {
+            foreach (Ball ball in Balls)
+            {
+                ball.MakeExplosive(explosionRadius);
+            }
         }
 
         #endregion
@@ -82,5 +109,10 @@ namespace Arkanoid.Game.Services
         }
 
         #endregion
+
+        public void SetBlockMask(LayerMask blockMask)
+        {
+            _blockMaskToExplode = blockMask;
+        }
     }
 }

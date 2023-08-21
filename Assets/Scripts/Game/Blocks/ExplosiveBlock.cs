@@ -1,3 +1,4 @@
+using Arkanoid.Game.Services;
 using UnityEngine;
 
 namespace Arkanoid.Game.Blocks
@@ -28,15 +29,8 @@ namespace Arkanoid.Game.Blocks
         {
             base.OnDestroyedActions();
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _explosiveRadius, _blockMask);
-            
-            foreach (Collider2D collider in colliders)
-            {
-                if (collider.TryGetComponent(out Block block))
-                {
-                    block.ForceDestroy();
-                }
-            }
+            LevelService.Instance.SetBlockMask(_blockMask);
+            LevelService.Instance.ExplodeBlock(transform, _explosiveRadius);
         }
 
         #endregion

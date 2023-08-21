@@ -1,4 +1,5 @@
 using System;
+using Arkanoid.Game.Blocks;
 using Arkanoid.Game.Services;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,6 +16,8 @@ namespace Arkanoid.Game
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
         private CircleCollider2D _collider;
+        private float _explosionRadius;
+        private bool _isExplosive;
         private bool _isStarted;
 
         private Vector3 _offset;
@@ -70,6 +73,16 @@ namespace Arkanoid.Game
             OnDestroyed?.Invoke(this);
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            bool isBlock = other.gameObject.TryGetComponent(out Block block);
+
+            if (_isExplosive && isBlock)
+            {
+                LevelService.Instance.ExplodeBlock(other.transform, _explosionRadius);
+            }
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
@@ -122,6 +135,12 @@ namespace Arkanoid.Game
             clone._rb.velocity = _rb.velocity;
 
             return clone;
+        }
+
+        public void MakeExplosive(float explosionRadius)
+        {
+            _isExplosive = true;
+            _explosionRadius = explosionRadius;
         }
 
         public void RandomizeDirection()
@@ -190,6 +209,7 @@ namespace Arkanoid.Game
         private void PerformStartActions()
         {
             _isStarted = false;
+            _isExplosive = false;
         }
 
         private void StartTheBall()
