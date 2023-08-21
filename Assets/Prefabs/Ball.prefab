@@ -198,6 +198,7 @@ MonoBehaviour:
   _speed: 10
   _xLimitation: {x: 0, y: 1}
   _yLimitation: {x: 1, y: 5}
+  _ballTrail: {fileID: 3300120904651035103}
 --- !u!212 &211635483288591758
 SpriteRenderer:
   m_ObjectHideFlags: 0

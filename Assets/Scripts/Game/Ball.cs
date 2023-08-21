@@ -19,6 +19,8 @@ namespace Arkanoid.Game
         private float _explosionRadius;
         private bool _isExplosive;
         private bool _isStarted;
+        [SerializeField] private GameObject _ballTrail;
+        
 
         private Vector3 _offset;
         private float _scale;
@@ -141,6 +143,7 @@ namespace Arkanoid.Game
         {
             _isExplosive = true;
             _explosionRadius = explosionRadius;
+            EnableTrail();
         }
 
         public void RandomizeDirection()
@@ -210,6 +213,16 @@ namespace Arkanoid.Game
         {
             _isStarted = false;
             _isExplosive = false;
+            DisableTrail();
+        }
+
+        private void EnableTrail()
+        {
+            _ballTrail.SetActive(true);
+        }
+        private void DisableTrail()
+        {
+            _ballTrail.SetActive(false);
         }
 
         private void StartTheBall()
