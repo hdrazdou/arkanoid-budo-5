@@ -1,3 +1,4 @@
+using System;
 using Arkanoid.Utility;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,12 @@ namespace Arkanoid.Infrastructure
 {
     public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
     {
+        #region Events
+
+        public event Action OnGameWon;
+
+        #endregion
+
         #region Public methods
 
         public void LoadNextScene()
@@ -13,6 +20,7 @@ namespace Arkanoid.Infrastructure
 
             if (SceneManager.sceneCountInBuildSettings == nextSceneIndex)
             {
+                OnGameWon?.Invoke();
                 return;
             }
 

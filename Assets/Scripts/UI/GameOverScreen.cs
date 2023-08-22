@@ -10,7 +10,6 @@ namespace Arkanoid.UI
         #region Variables
 
         [SerializeField] private GameObject _gameOverUi;
-
         [SerializeField] private TMP_Text _gameOverScoreLabel;
         [SerializeField] private Button _restartButton;
 
