@@ -31,10 +31,7 @@ namespace Arkanoid.Utility
 
         #region Protected methods
 
-        protected virtual void OnAwake()
-        {
-            
-        }
+        protected virtual void OnAwake() { }
 
         #endregion
     }

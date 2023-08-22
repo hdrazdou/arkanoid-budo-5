@@ -64,6 +64,11 @@ namespace Arkanoid.Game.Services
             }
         }
 
+        public void SetBlockMask(LayerMask blockMask)
+        {
+            _blockMaskToExplode = blockMask;
+        }
+
         #endregion
 
         #region Protected methods
@@ -109,10 +114,5 @@ namespace Arkanoid.Game.Services
         }
 
         #endregion
-
-        public void SetBlockMask(LayerMask blockMask)
-        {
-            _blockMaskToExplode = blockMask;
-        }
     }
 }

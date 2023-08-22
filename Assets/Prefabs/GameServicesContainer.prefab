@@ -267,7 +267,7 @@ MonoBehaviour:
   - PickUpPrefab: {fileID: 9116971410802512877, guid: 15daba7e8a8274120bb85b82223d77f5, type: 3}
     SpawnWeight: 80
   - PickUpPrefab: {fileID: -2317019157000743755, guid: e8b1be47f082a489e86bb20eaf0713b4, type: 3}
-    SpawnWeight: 80
+    SpawnWeight: 123123
   - PickUpPrefab: {fileID: 1487746757086303524, guid: eb06ad50322374a598f8238b4ac36683, type: 3}
     SpawnWeight: 80
   - PickUpPrefab: {fileID: -8210979436665967553, guid: 4726a72c646cc494c97210a1cd0a540a, type: 3}

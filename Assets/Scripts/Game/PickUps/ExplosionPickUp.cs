@@ -10,7 +10,6 @@ namespace Arkanoid.Game.PickUps
         [SerializeField] private float _explosionRadius = 1f;
         [SerializeField] private LayerMask _blockMask;
 
-
         #endregion
 
         #region Protected methods

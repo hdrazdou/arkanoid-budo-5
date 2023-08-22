@@ -5,7 +5,13 @@ namespace Arkanoid.Game.PickUps
 {
     public class ChangeHpPickup : PickUp
     {
+        #region Variables
+
         [SerializeField] private int _hpToChange;
+
+        #endregion
+
+        #region Protected methods
 
         protected override void PerformActions()
         {
@@ -13,5 +19,7 @@ namespace Arkanoid.Game.PickUps
 
             GameService.Instance.ChangeHp(_hpToChange);
         }
+
+        #endregion
     }
 }
