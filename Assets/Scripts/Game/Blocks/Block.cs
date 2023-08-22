@@ -111,8 +111,8 @@ namespace Arkanoid.Game.Blocks
 
         private void PerformDestroyActions()
         {
-            GameService.Instance.ChangeScore(_score);
             Destroy(gameObject);
+            GameService.Instance.ChangeScore(_score);
             PickUpService.Instance.CreatePickUp(transform.position);
             OnDestroyedActions();
         }
