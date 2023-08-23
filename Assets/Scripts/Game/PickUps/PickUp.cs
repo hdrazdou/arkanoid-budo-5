@@ -22,7 +22,6 @@ namespace Arkanoid.Game.PickUps
             {
                 PerformActions();
                 Destroy(gameObject);
-                GameService.Instance.ChangeScore(_score);
             }
         }
 
@@ -33,6 +32,7 @@ namespace Arkanoid.Game.PickUps
         protected virtual void PerformActions()
         {
             AudioService.Instance.PlayPickupSound(_audioClip);
+            GameService.Instance.ChangeScore(_score);
         }
 
         #endregion

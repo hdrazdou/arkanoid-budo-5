@@ -1,4 +1,3 @@
-using Arkanoid.Game.Services;
 using UnityEngine;
 
 namespace Arkanoid.Game.Blocks
@@ -29,8 +28,7 @@ namespace Arkanoid.Game.Blocks
         {
             base.OnDestroyedActions();
 
-            LevelService.Instance.SetBlockMask(_blockMask);
-            LevelService.Instance.ExplodeBlock(transform, _explosiveRadius);
+            ExplosionHelper.ExplodeBlocks(transform.position, _explosiveRadius, _blockMask);
         }
 
         #endregion

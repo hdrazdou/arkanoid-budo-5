@@ -31,6 +31,7 @@ namespace Arkanoid.Infrastructure
         public void LoadZeroScene()
         {
             SceneManager.LoadScene(0);
+            Debug.Log($"SceneLoader LoadZeroScene");
         }
 
         #endregion

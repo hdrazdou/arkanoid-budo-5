@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 6323f44e1990547b1ad20300f8a1ee49, type: 3}
   _score: 1
-  _explosionRadius: 5
+  _explosionRadius: 1
   _blockMask:
     serializedVersion: 2
     m_Bits: 1024

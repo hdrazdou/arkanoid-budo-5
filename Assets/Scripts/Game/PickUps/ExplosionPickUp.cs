@@ -18,8 +18,10 @@ namespace Arkanoid.Game.PickUps
         {
             base.PerformActions();
 
-            LevelService.Instance.SetBlockMask(_blockMask);
-            LevelService.Instance.MakeBallsExplosive(_explosionRadius);
+            foreach (Ball ball in LevelService.Instance.Balls)
+            {
+                ball.MakeExplosive(_explosionRadius, _blockMask);
+            }
         }
 
         #endregion

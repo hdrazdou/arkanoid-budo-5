@@ -1,5 +1,4 @@
 using System;
-using Arkanoid.Game.Blocks;
 using Arkanoid.Game.Services;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,12 +14,12 @@ namespace Arkanoid.Game
         [SerializeField] private float _speed = 10;
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
+        [SerializeField] private GameObject _ballTrail;
+        private LayerMask _blockMask;
         private CircleCollider2D _collider;
         private float _explosionRadius;
         private bool _isExplosive;
         private bool _isStarted;
-        [SerializeField] private GameObject _ballTrail;
-        
 
         private Vector3 _offset;
         private float _scale;
@@ -77,11 +76,16 @@ namespace Arkanoid.Game
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            bool isBlock = other.gameObject.TryGetComponent(out Block block);
+            bool isPlatform = other.gameObject.TryGetComponent(out Platform platform);
 
-            if (_isExplosive && isBlock)
+            if (isPlatform)
             {
-                LevelService.Instance.ExplodeBlock(other.transform, _explosionRadius);
+                return;
+            }
+
+            if (_isExplosive)
+            {
+                ExplosionHelper.ExplodeBlocks(transform.position, _explosionRadius, _blockMask);
             }
         }
 
@@ -139,10 +143,11 @@ namespace Arkanoid.Game
             return clone;
         }
 
-        public void MakeExplosive(float explosionRadius)
+        public void MakeExplosive(float explosionRadius, LayerMask blockMask)
         {
             _isExplosive = true;
             _explosionRadius = explosionRadius;
+            _blockMask = blockMask;
             EnableTrail();
         }
 
@@ -189,6 +194,16 @@ namespace Arkanoid.Game
             _offset.y += offsetShift;
         }
 
+        private void DisableTrail()
+        {
+            _ballTrail.SetActive(false);
+        }
+
+        private void EnableTrail()
+        {
+            _ballTrail.SetActive(true);
+        }
+
         private float GetRadius()
         {
             float radius = _collider.radius;
@@ -214,15 +229,6 @@ namespace Arkanoid.Game
             _isStarted = false;
             _isExplosive = false;
             DisableTrail();
-        }
-
-        private void EnableTrail()
-        {
-            _ballTrail.SetActive(true);
-        }
-        private void DisableTrail()
-        {
-            _ballTrail.SetActive(false);
         }
 
         private void StartTheBall()
