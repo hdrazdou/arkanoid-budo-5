@@ -13,6 +13,7 @@ What I've done:
 - HP feature (Hearts sprites) 
 - Game Pause (by esc)
 - Game Over screen with Restart button
+- Game Won screen with Restart button
 - Trail for the Ball
 - PickUps feature (Bonus) when Blocks are broken:
 1. Changing Block size
@@ -21,16 +22,20 @@ What I've done:
 4. Changing User's HP and Score 
 5. Cloning active Ball(s)
 6. Ball sticking to the Platform
+7. Ball exploding on collision
+- Sound when PickUp is catched
 
 What I've used:
 - Prefabs for GameObjects
-- Game Services to manage the features (GameService, LevelService, PickUpService, PauseService)
+- Game Services to manage the features (GameService, LevelService, PickUpService, PauseService, AudioService)
 - NameSpacing in Code
 - ScriptableObject (as config for Blocks states)
 - Singleton pattern (for saving GameObjects between scenes)
 - Prototype pattern (for cloning the Ball)
 - Dynamic Instantiate of GameObjects
 - DontDestroyOnLoad method
+- AudioSource component for SFX of PickUps
+
 
 What I've learned:
 - Familiarize with Unity lifecycle (Awake, Start, OnDestroy...)
