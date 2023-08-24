@@ -14,6 +14,7 @@ namespace Arkanoid.Game.Services
 
         [Header("Settings")]
         [SerializeField] private int _hp;
+        private bool _isGameOver;
 
         private int _totalScore;
 
@@ -23,6 +24,7 @@ namespace Arkanoid.Game.Services
 
         public event Action OnBallHitFloor;
         public event Action<int> OnGameOver;
+        public event Action<int> OnGameWon;
         public event Action<int> OnHpChanged;
         public event Action<int> OnScoreChanged;
 
@@ -93,6 +95,7 @@ namespace Arkanoid.Game.Services
             if (Hp <= 0)
             {
                 OnGameOver?.Invoke(TotalScore);
+                _isGameOver = true;
             }
         }
 
@@ -123,6 +126,18 @@ namespace Arkanoid.Game.Services
 
         private void OnAllBlocksDestroyed()
         {
+            if (_isGameOver)
+            {
+                _isGameOver = false;
+                return;
+            }
+
+            if (SceneLoader.Instance.IsLastLevel())
+            {
+                OnGameWon?.Invoke(TotalScore);
+                return;
+            }
+
             LoadNextLevel();
         }
 

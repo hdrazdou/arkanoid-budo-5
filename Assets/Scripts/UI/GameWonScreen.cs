@@ -1,5 +1,4 @@
 using Arkanoid.Game.Services;
-using Arkanoid.Infrastructure;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,21 +21,20 @@ namespace Arkanoid.UI
         {
             _gameWonUi.SetActive(false);
             _restartButton.onClick.AddListener(OnRestartButtonClicked);
-            SceneLoader.Instance.OnGameWon += OnGameWon;
+            GameService.Instance.OnGameWon += OnGameWon;
         }
 
         private void OnDestroy()
         {
-            SceneLoader.Instance.OnGameWon -= OnGameWon;
+            GameService.Instance.OnGameWon -= OnGameWon;
         }
 
         #endregion
 
         #region Private methods
 
-        private void OnGameWon()
+        private void OnGameWon(int score)
         {
-            int score = GameService.Instance.TotalScore;
             _gameWonScoreLabel.text = $"Your Score: {score}";
             _gameWonUi.SetActive(true);
         }

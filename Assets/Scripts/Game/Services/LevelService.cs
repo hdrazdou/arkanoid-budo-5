@@ -12,7 +12,6 @@ namespace Arkanoid.Game.Services
 
         private readonly List<Ball> _balls = new();
         private readonly List<Block> _blocks = new();
-        private LayerMask _blockMaskToExplode;
 
         #endregion
 
@@ -44,9 +43,7 @@ namespace Arkanoid.Game.Services
         #region Public methods
 
         public void SetBlockMask(LayerMask blockMask)
-        {
-            _blockMaskToExplode = blockMask;
-        }
+        { }
 
         #endregion
 
