@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Arkanoid.Infrastructure;
 using Arkanoid.Utility;
 using UnityEngine;
@@ -119,6 +120,16 @@ namespace Arkanoid.Game.Services
 
         #region Private methods
 
+        private static void DestroyClonedBalls()
+        {
+            List<Ball> balls = LevelService.Instance.Balls;
+            
+            for (int i = 1; i < balls.Count; i++)
+            {
+                Destroy(balls[i]);
+            }
+        }
+
         private void LoadNextLevel()
         {
             SceneLoader.Instance.LoadNextScene();
@@ -143,6 +154,11 @@ namespace Arkanoid.Game.Services
 
         private static void ResetBall()
         {
+            if (LevelService.Instance.Balls.Count > 1)
+            {
+                DestroyClonedBalls();
+            }
+
             Ball ball = FindObjectOfType<Ball>();
             ball.ResetBall();
         }
