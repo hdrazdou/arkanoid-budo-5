@@ -139,7 +139,10 @@ namespace Arkanoid.Game
             clone._isStarted = _isStarted;
             clone._offset = _offset;
             clone._rb.velocity = _rb.velocity;
-            clone.MakeExplosive(_explosionRadius, _blockMask);
+            if (_isExplosive)
+            {
+                clone.MakeExplosive(_explosionRadius, _blockMask);
+            }
 
             return clone;
         }

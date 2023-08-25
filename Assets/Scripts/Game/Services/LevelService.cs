@@ -10,7 +10,7 @@ namespace Arkanoid.Game.Services
     {
         #region Variables
 
-        private readonly List<Ball> _balls = new();
+        [SerializeField] private List<Ball> _balls = new();
         private readonly List<Block> _blocks = new();
 
         #endregion
@@ -24,6 +24,7 @@ namespace Arkanoid.Game.Services
         #region Properties
 
         public List<Ball> Balls => _balls;
+        
 
         #endregion
 

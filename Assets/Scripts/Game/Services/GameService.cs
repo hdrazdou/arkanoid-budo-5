@@ -124,13 +124,11 @@ namespace Arkanoid.Game.Services
 
         private static void DestroyClonedBalls()
         {
-            List<Ball> balls = LevelService.Instance.Balls;
-            
             Debug.Log($"GameService ResetBall DestroyClonedBalls {LevelService.Instance.Balls}");
 
-            for (int i = 1; i < balls.Count; i++)
+            for (int i = 1; i < LevelService.Instance.Balls.Count; i++)
             {
-                Destroy(balls[i]);
+                Destroy(LevelService.Instance.Balls[i]);
             }
         }
 
