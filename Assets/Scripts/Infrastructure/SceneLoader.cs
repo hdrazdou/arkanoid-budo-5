@@ -20,14 +20,11 @@ namespace Arkanoid.Infrastructure
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
             SceneManager.LoadScene(nextSceneIndex);
-            Debug.Log("SceneLoader LoadNextScene");
-
         }
 
         public void LoadZeroScene()
         {
             SceneManager.LoadScene(0);
-            Debug.Log("SceneLoader LoadZeroScene");
         }
 
         #endregion

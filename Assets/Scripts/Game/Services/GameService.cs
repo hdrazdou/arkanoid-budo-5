@@ -71,7 +71,7 @@ namespace Arkanoid.Game.Services
 
         private void Start()
         {
-            SetScoresOnStart();
+            OnStartActions();
 
             LevelService.Instance.OnAllBlocksDestroyed += OnAllBlocksDestroyed;
         }
@@ -94,7 +94,6 @@ namespace Arkanoid.Game.Services
             {
                 OnGameOver?.Invoke(TotalScore);
                 _isGameOver = true;
-                Debug.Log($"GameService BallHitFloor OnGameOver?.Invoke _isGameOver {_isGameOver}");
             }
         }
 
@@ -111,14 +110,13 @@ namespace Arkanoid.Game.Services
         public void ReloadGame()
         {
             SceneLoader.Instance.LoadZeroScene();
-            SetScoresOnStart();
+            SetInitScores();
         }
 
-        public void StartGame()
+        public void OnStartActions()
         {
-            Debug.Log("GameService StartGame");
             _isGameOver = false;
-            SetScoresOnStart();
+            SetInitScores();
         }
 
         #endregion
@@ -142,9 +140,7 @@ namespace Arkanoid.Game.Services
         {
             if (_isGameOver)
             {
-                // _isGameOver = false;
-                ResetGame();
-                Debug.Log($"GameService OnAllBlocksDestroyed _isGameOver {_isGameOver}");
+                SetInitScores();
                 return;
             }
 
@@ -170,17 +166,10 @@ namespace Arkanoid.Game.Services
             }
         }
 
-        private void ResetGame()
-        {
-            SetScoresOnStart();
-            Debug.Log($"GameService ResetGame _isGameOver {_isGameOver}");
-        }
-
-        private void SetScoresOnStart()
+        private void SetInitScores()
         {
             _cachedHp = _initHp;
             _totalScore = 0;
-            Debug.Log($"GameService SetScoresOnStart Hp = {Hp}");
         }
 
         #endregion

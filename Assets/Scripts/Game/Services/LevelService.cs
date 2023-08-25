@@ -9,9 +9,9 @@ namespace Arkanoid.Game.Services
     {
         #region Variables
 
-        private readonly List<Block> _blocks = new();
-
         private readonly List<Ball> _balls = new();
+
+        private readonly List<Block> _blocks = new();
 
         #endregion
 

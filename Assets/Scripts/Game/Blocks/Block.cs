@@ -35,7 +35,6 @@ namespace Arkanoid.Game.Blocks
         private void Start()
         {
             OnCreated?.Invoke(this);
-            Debug.Log($"Block OnCreated {this}");
 
             DestroyIfZeroHp();
 
@@ -53,8 +52,6 @@ namespace Arkanoid.Game.Blocks
         private void OnDestroy()
         {
             OnDestroyed?.Invoke(this);
-            Debug.Log($"Block OnDestroyed {this}");
-
         }
 
         private void OnCollisionEnter2D(Collision2D other)
