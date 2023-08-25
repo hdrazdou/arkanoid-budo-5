@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Arkanoid.Game.Blocks;
 using Arkanoid.Utility;
-using UnityEngine;
 
 namespace Arkanoid.Game.Services
 {
@@ -10,8 +9,9 @@ namespace Arkanoid.Game.Services
     {
         #region Variables
 
-        [SerializeField] private List<Ball> _balls = new();
         private readonly List<Block> _blocks = new();
+
+        private readonly List<Ball> _balls = new();
 
         #endregion
 
@@ -24,7 +24,6 @@ namespace Arkanoid.Game.Services
         #region Properties
 
         public List<Ball> Balls => _balls;
-        
 
         #endregion
 
@@ -38,13 +37,6 @@ namespace Arkanoid.Game.Services
             Block.OnCreated -= OnBlockCreated;
             Block.OnDestroyed -= OnBlockDestroyed;
         }
-
-        #endregion
-
-        #region Public methods
-
-        public void SetBlockMask(LayerMask blockMask)
-        { }
 
         #endregion
 

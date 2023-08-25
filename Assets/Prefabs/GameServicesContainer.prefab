@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _needAutoPlay: 0
-  _hp: 3
+  _initHp: 3
 --- !u!1 &2240631766653780256
 GameObject:
   m_ObjectHideFlags: 0
