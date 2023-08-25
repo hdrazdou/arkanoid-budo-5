@@ -212,6 +212,7 @@ Transform:
   - {fileID: 4902999513184442790}
   - {fileID: 2693977785102154464}
   - {fileID: 252794043472475931}
+  - {fileID: 3874877873228574824}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -357,6 +358,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6252276806241225491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3874877873228574824}
+  - component: {fileID: 1081734868423711254}
+  m_Layer: 0
+  m_Name: GameStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3874877873228574824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252276806241225491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502817234434983254}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081734868423711254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252276806241225491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2bd1f3e21454d059a361255cb08abce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7779479209659174937
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,9 +457,9 @@ MonoBehaviour:
   - Name: CatchBallPickup:80
     PickUpPrefab: {fileID: 9116971410802512877, guid: 15daba7e8a8274120bb85b82223d77f5, type: 3}
     SpawnWeight: 80
-  - Name: CloneBallPickup:80
+  - Name: CloneBallPickup:123123
     PickUpPrefab: {fileID: -2317019157000743755, guid: e8b1be47f082a489e86bb20eaf0713b4, type: 3}
-    SpawnWeight: 80
+    SpawnWeight: 123123
   - Name: DecreaseBallSizePickup:80
     PickUpPrefab: {fileID: 1487746757086303524, guid: eb06ad50322374a598f8238b4ac36683, type: 3}
     SpawnWeight: 80
@@ -436,6 +481,6 @@ MonoBehaviour:
   - Name: RemoveScorePickup:80
     PickUpPrefab: {fileID: 4849980086181618818, guid: 550efd5f2289d4242a56288a8e62610e, type: 3}
     SpawnWeight: 80
-  - Name: ExplosionPickUp:123123
+  - Name: ExplosionPickUp:80
     PickUpPrefab: {fileID: -3922797307585818836, guid: 40a0346decf0846b499e3782d7d7eb75, type: 3}
-    SpawnWeight: 123123
+    SpawnWeight: 80

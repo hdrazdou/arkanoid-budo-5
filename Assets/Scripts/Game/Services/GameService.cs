@@ -23,7 +23,6 @@ namespace Arkanoid.Game.Services
 
         #region Events
 
-        public event Action OnBallHitFloor;
         public event Action<int> OnGameOver;
         public event Action<int> OnGameWon;
         public event Action<int> OnHpChanged;
@@ -88,8 +87,6 @@ namespace Arkanoid.Game.Services
 
         public void BallHitFloor()
         {
-            OnBallHitFloor?.Invoke();
-
             Hp--;
             ResetBall();
 
@@ -112,8 +109,13 @@ namespace Arkanoid.Game.Services
 
         public void ReloadGame()
         {
-            ResetScores();
             SceneLoader.Instance.LoadZeroScene();
+            ResetScores();
+        }
+
+        public void StartGame()
+        {
+            ResetScores();
         }
 
         #endregion
@@ -124,6 +126,8 @@ namespace Arkanoid.Game.Services
         {
             List<Ball> balls = LevelService.Instance.Balls;
             
+            Debug.Log($"GameService ResetBall DestroyClonedBalls {LevelService.Instance.Balls}");
+
             for (int i = 1; i < balls.Count; i++)
             {
                 Destroy(balls[i]);
@@ -167,6 +171,7 @@ namespace Arkanoid.Game.Services
         {
             Hp = 3;
             TotalScore = 0;
+            // _isGameOver = false;
         }
 
         private void SetHpOnStart()

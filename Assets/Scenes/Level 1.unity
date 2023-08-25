@@ -2246,7 +2246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: _pickUps.Array.data[11].Name
-      value: ExplosionPickUp:80
+      value: ExplosionPickUp:123123
       objectReference: {fileID: 0}
     - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: _pickUps.Array.data[3].SpawnWeight
@@ -2254,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026812281796227207, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: _pickUps.Array.data[11].SpawnWeight
-      value: 80
+      value: 123123
       objectReference: {fileID: 0}
     - target: {fileID: 5665078852144498307, guid: 5e3ee2e5891554fe69d6fb75731982dc, type: 3}
       propertyPath: m_Name
