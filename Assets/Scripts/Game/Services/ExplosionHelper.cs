@@ -3,16 +3,19 @@ using Arkanoid.Utility;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Arkanoid.Game
+namespace Arkanoid.Game.Services
 {
-    public class ExplosionHelper:SingletonMonoBehaviour<ExplosionHelper>
+    public class ExplosionHelper : SingletonMonoBehaviour<ExplosionHelper>
     {
+        [SerializeField] private AudioClip _explosionSound;
+        
         #region Public methods
 
         public void ExplodeBlocks(Vector3 center, float explosionRadius, LayerMask blockMask,
             GameObject vfxPrefab)
         {
             InstantiateVfx(vfxPrefab, center);
+            AudioService.Instance.PlayExplosionSound(_explosionSound);
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(center, explosionRadius, blockMask);
 

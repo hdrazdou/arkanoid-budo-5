@@ -32,6 +32,16 @@ namespace Arkanoid.Game.Services
 
             _audioSource.PlayOneShot(audioClip);
         }
+        
+        public void PlayExplosionSound(AudioClip audioClip)
+        {
+            if (audioClip == null)
+            {
+                return;
+            }
+
+            _audioSource.PlayOneShot(audioClip);
+        }
 
         #endregion
     }
