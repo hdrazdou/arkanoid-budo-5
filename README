@@ -24,6 +24,7 @@ What I've done:
 6. Ball sticking to the Platform
 7. Ball exploding on collision
 - Sound when PickUp is catched
+- SFX and VFX for explosion (Ball or Block)
 
 What I've used:
 - Prefabs for GameObjects
