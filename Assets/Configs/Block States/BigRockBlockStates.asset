@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e4589ec0ed483ca474e88c6e7e898d, type: 3}
   m_Name: BigRockBlockStates
   m_EditorClassIdentifier: 
-  BlockStatesSprites: []
+  _blockStatesSprites:
+  - {fileID: 21300000, guid: 96d423fe112f84824ac04a5e6663605c, type: 3}

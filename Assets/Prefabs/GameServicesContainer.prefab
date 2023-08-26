@@ -213,8 +213,9 @@ Transform:
   - {fileID: 2693977785102154464}
   - {fileID: 252794043472475931}
   - {fileID: 3874877873228574824}
+  - {fileID: 1131878785898999710}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5729453045566017070
 GameObject:
@@ -402,6 +403,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2bd1f3e21454d059a361255cb08abce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6861049264600794718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1131878785898999710}
+  - component: {fileID: 4709574978586531343}
+  m_Layer: 0
+  m_Name: ExplosionHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1131878785898999710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6861049264600794718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502817234434983254}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4709574978586531343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6861049264600794718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1f50d1c09e4bc6b28a969947ce7337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7779479209659174937
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +526,6 @@ MonoBehaviour:
   - Name: RemoveScorePickup:80
     PickUpPrefab: {fileID: 4849980086181618818, guid: 550efd5f2289d4242a56288a8e62610e, type: 3}
     SpawnWeight: 80
-  - Name: ExplosionPickUp:80
+  - Name: ExplosionPickUp:123123
     PickUpPrefab: {fileID: -3922797307585818836, guid: 40a0346decf0846b499e3782d7d7eb75, type: 3}
-    SpawnWeight: 80
+    SpawnWeight: 123123

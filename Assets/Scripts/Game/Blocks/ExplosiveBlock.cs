@@ -9,6 +9,7 @@ namespace Arkanoid.Game.Blocks
         [Header(nameof(ExplosiveBlock))]
         [SerializeField] private float _explosiveRadius = 1f;
         [SerializeField] private LayerMask _blockMask;
+        [SerializeField] private GameObject _vfxPrefab;
 
         #endregion
 
@@ -28,7 +29,7 @@ namespace Arkanoid.Game.Blocks
         {
             base.OnDestroyedActions();
 
-            ExplosionHelper.ExplodeBlocks(transform.position, _explosiveRadius, _blockMask);
+            ExplosionHelper.Instance.ExplodeBlocks(transform.position, _explosiveRadius, _blockMask, _vfxPrefab);
         }
 
         #endregion

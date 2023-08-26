@@ -15,6 +15,7 @@ namespace Arkanoid.Game
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
         [SerializeField] private GameObject _ballTrail;
+        private GameObject _vfxPrefab;
         private LayerMask _blockMask;
         private CircleCollider2D _collider;
         private float _explosionRadius;
@@ -85,7 +86,7 @@ namespace Arkanoid.Game
 
             if (_isExplosive)
             {
-                ExplosionHelper.ExplodeBlocks(transform.position, _explosionRadius, _blockMask);
+                ExplosionHelper.Instance.ExplodeBlocks(transform.position, _explosionRadius, _blockMask, _vfxPrefab);
             }
         }
 
@@ -141,17 +142,18 @@ namespace Arkanoid.Game
             clone._rb.velocity = _rb.velocity;
             if (_isExplosive)
             {
-                clone.MakeExplosive(_explosionRadius, _blockMask);
+                clone.MakeExplosive(_explosionRadius, _blockMask, _vfxPrefab);
             }
 
             return clone;
         }
 
-        public void MakeExplosive(float explosionRadius, LayerMask blockMask)
+        public void MakeExplosive(float explosionRadius, LayerMask blockMask, GameObject vfxPrefab)
         {
             _isExplosive = true;
             _explosionRadius = explosionRadius;
             _blockMask = blockMask;
+            _vfxPrefab = vfxPrefab;
             EnableTrail();
         }
 

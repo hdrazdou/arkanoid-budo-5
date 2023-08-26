@@ -53,6 +53,7 @@ MonoBehaviour:
   _blockMask:
     serializedVersion: 2
     m_Bits: 1024
+  _vfxPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
 --- !u!212 &1944029409516445828
 SpriteRenderer:
   m_ObjectHideFlags: 0
