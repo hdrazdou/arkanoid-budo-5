@@ -107,6 +107,14 @@ namespace Arkanoid.Game
                 Gizmos.DrawLine(transform.position, transform.position + (Vector3)_rb.velocity);
             }
         }
+        
+        private Vector2 GetRandomStartVelocity()
+        {
+            float x = Random.Range(_xLimitation.x, _xLimitation.y);
+            float y = Random.Range(_yLimitation.x, _yLimitation.y);
+
+            return new Vector2(x, y).normalized * _speed;
+        }
 
         #endregion
 
@@ -216,13 +224,7 @@ namespace Arkanoid.Game
             return radius;
         }
 
-        private Vector2 GetRandomStartVelocity()
-        {
-            float x = Random.Range(_xLimitation.x, _xLimitation.y);
-            float y = Random.Range(_yLimitation.x, _yLimitation.y);
-
-            return new Vector2(x, y).normalized * _speed;
-        }
+        
 
         private void MoveWithPlatform()
         {

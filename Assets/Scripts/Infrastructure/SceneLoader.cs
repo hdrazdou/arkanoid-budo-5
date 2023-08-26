@@ -1,5 +1,4 @@
 using Arkanoid.Utility;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Arkanoid.Infrastructure

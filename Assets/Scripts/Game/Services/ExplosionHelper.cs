@@ -7,8 +7,12 @@ namespace Arkanoid.Game.Services
 {
     public class ExplosionHelper : SingletonMonoBehaviour<ExplosionHelper>
     {
+        #region Variables
+
         [SerializeField] private AudioClip _explosionSound;
-        
+
+        #endregion
+
         #region Public methods
 
         public void ExplodeBlocks(Vector3 center, float explosionRadius, LayerMask blockMask,

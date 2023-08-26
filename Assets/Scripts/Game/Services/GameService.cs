@@ -107,15 +107,15 @@ namespace Arkanoid.Game.Services
             TotalScore = Mathf.Max(0, TotalScore + score); // чтоб TotalScore не мог быть ниже нуля
         }
 
-        public void ReloadGame()
-        {
-            SceneLoader.Instance.LoadZeroScene();
-            SetInitScores();
-        }
-
         public void OnStartActions()
         {
             _isGameOver = false;
+            SetInitScores();
+        }
+
+        public void ReloadGame()
+        {
+            SceneLoader.Instance.LoadZeroScene();
             SetInitScores();
         }
 

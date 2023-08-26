@@ -23,7 +23,7 @@ namespace Arkanoid.Game.Services
 
         #region Public methods
 
-        public void PlayPickupSound(AudioClip audioClip)
+        public void PlayExplosionSound(AudioClip audioClip)
         {
             if (audioClip == null)
             {
@@ -32,8 +32,8 @@ namespace Arkanoid.Game.Services
 
             _audioSource.PlayOneShot(audioClip);
         }
-        
-        public void PlayExplosionSound(AudioClip audioClip)
+
+        public void PlayPickupSound(AudioClip audioClip)
         {
             if (audioClip == null)
             {
