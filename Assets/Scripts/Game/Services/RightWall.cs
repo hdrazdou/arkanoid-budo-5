@@ -16,7 +16,7 @@ namespace Arkanoid.Game.Services
         {
             float cameraSize = Camera.main.orthographicSize;
             _mainCameraWidth = Camera.main.aspect * cameraSize;
-            
+
             Vector3 transformPosition = transform.position;
             transformPosition.x = _mainCameraWidth;
             transform.position = transformPosition;

@@ -11,14 +11,12 @@ namespace Arkanoid.Game.Services
 
         [Header("Auto-play")]
         [SerializeField] private bool _needAutoPlay;
-
-        
+        [SerializeField] private int _initHp;
 
         [Header("Settings")]
         private int _cachedHp;
         private bool _isGameOver;
         private int _totalScore;
-        [SerializeField] private int _initHp;
 
         #endregion
 
