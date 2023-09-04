@@ -15,7 +15,6 @@ namespace Arkanoid.Game
         [SerializeField] private Vector2 _xLimitation;
         [SerializeField] private Vector2 _yLimitation;
         [SerializeField] private GameObject _ballTrail;
-        private GameObject _vfxPrefab;
         private LayerMask _blockMask;
         private CircleCollider2D _collider;
         private float _explosionRadius;
@@ -24,6 +23,7 @@ namespace Arkanoid.Game
 
         private Vector3 _offset;
         private float _scale;
+        private GameObject _vfxPrefab;
 
         #endregion
 
@@ -106,14 +106,6 @@ namespace Arkanoid.Game
             {
                 Gizmos.DrawLine(transform.position, transform.position + (Vector3)_rb.velocity);
             }
-        }
-        
-        private Vector2 GetRandomStartVelocity()
-        {
-            float x = Random.Range(_xLimitation.x, _xLimitation.y);
-            float y = Random.Range(_yLimitation.x, _yLimitation.y);
-
-            return new Vector2(x, y).normalized * _speed;
         }
 
         #endregion
@@ -224,7 +216,13 @@ namespace Arkanoid.Game
             return radius;
         }
 
-        
+        private Vector2 GetRandomStartVelocity()
+        {
+            float x = Random.Range(_xLimitation.x, _xLimitation.y);
+            float y = Random.Range(_yLimitation.x, _yLimitation.y);
+
+            return new Vector2(x, y).normalized * _speed;
+        }
 
         private void MoveWithPlatform()
         {

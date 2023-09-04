@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6203817393303497616}
   - component: {fileID: 7053774743400354542}
   - component: {fileID: 8015749691384683689}
-  - component: {fileID: 6898181415934969528}
+  - component: {fileID: 5718573716035255863}
   m_Layer: 10
   m_Name: RoundWoodBlock
   m_TagString: Untagged
@@ -103,8 +103,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6898181415934969528
-BoxCollider2D:
+--- !u!58 &5718573716035255863
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,15 +136,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1.4, y: 1.4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
